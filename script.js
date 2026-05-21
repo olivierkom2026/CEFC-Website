@@ -264,8 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Admin Dashboard Controllers (Easter Egg pour Olivier) ---------- */
-  const adminTrigger = document.getElementById('adminTrigger');
+  /* ---------- Admin Dashboard Controllers (Accès secret : Ctrl+Shift+A) ---------- */
   const adminOverlay = document.getElementById('adminOverlay');
   const adminClose = document.getElementById('adminClose');
   const tabBtnRdv = document.getElementById('tabBtnRdv');
@@ -371,16 +370,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Open Admin Dashboard via double-click on status indicator
-  if (adminTrigger) {
-    adminTrigger.addEventListener('dblclick', () => {
+  // Open Admin Dashboard via SECRET keyboard shortcut: Ctrl + Shift + A
+  document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+      e.preventDefault();
       if (adminOverlay) {
         renderAdminData();
         adminOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
-    });
-  }
+    }
+  });
 
   // Close Admin modal
   if (adminClose) {
