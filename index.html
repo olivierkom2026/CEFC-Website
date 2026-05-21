@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEFC SARL — Cabinet d'Expertise Comptable et Fiscale | Douala, Cameroun</title>
+  <meta name="description" content="CEFC SARL, votre partenaire comptable et fiscal de confiance à Douala. Comptabilité, fiscalité, audit, contentieux fiscaux — accompagnement sur-mesure pour entreprises et particuliers au Cameroun.">
+  <meta name="keywords" content="cabinet comptable Douala, expertise comptable Cameroun, fiscalité entreprise, audit, CEFC SARL, contentieux fiscal">
+  <meta property="og:title" content="CEFC SARL — Cabinet d'Expertise Comptable et Fiscale">
+  <meta property="og:description" content="Votre partenaire comptable et fiscal de confiance à Douala, Cameroun.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Overlay Global Bruit SVG (Cinematic Noise) -->
+  <svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+  <!-- Navigation "L'Île Flottante" -->
+  <header class="navbar-wrapper">
+    <nav id="navbar" class="floating-island">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+         <ul class="nav-links" id="navLinks">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Avantages</a></li>
+          <li><a href="#about">Cabinet</a></li>
+          <li><a href="#pricing">Tarifs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta open-rdv-btn">Prendre RDV</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero "Le Plan d'Ouverture" (100dvh, Pushed content to bottom-left third) -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img src="hero-bg.png" alt="Équipe comptable CEFC SARL" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-wrapper">
+      <div class="hero-content anim-fade-up">
+        <div class="hero-badge"><i class="fas fa-shield-halved"></i> Cabinet Agréé CEMAC — Douala, Cameroun</div>
+        <h1>
+          Pilotez vos finances au-delà de la <span class="text-accent">Régulation.</span>
+        </h1>
+        <p class="hero-sub">CEFC SARL transforme votre comptabilité et votre gestion fiscale en un instrument de haute précision stratégique pour votre croissance au Cameroun.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary open-rdv-btn">Prendre un Rendez-vous</button>
+          <a href="#services" class="btn btn-outline"><i class="fas fa-arrow-down"></i> Explorer les Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-dot"></div></div>
+  </section>
+
+  <!-- Stats -->
+  <section id="stats">
+    <div class="container stats-grid">
+      <div class="stat"><span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span><p>Clients Accompagnés</p></div>
+      <div class="stat"><span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span><p>Années d'Expérience</p></div>
+      <div class="stat"><span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span><p>Satisfaction Client</p></div>
+      <div class="stat"><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span><p>Experts Dédiés</p></div>
+    </div>
+  </section>
+
+  <!-- Services "Des Solutions Comptables et Fiscales Adaptées" -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head anim-fade-up">
+        <span class="tag">Expertises</span>
+        <h2>Des Solutions Comptables &amp; Fiscales Adaptées à Vos Besoins</h2>
+        <p>Que vous soyez une grande entreprise, une PME, un professionnel libéral ou un particulier, CEFC SARL vous offre un accompagnement personnalisé.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-calculator"></i></div>
+          <h3>Comptabilité Générale</h3>
+          <p>Tenue de comptes, états financiers, bilans et comptes de résultat. Une comptabilité rigoureuse pour des décisions éclairées.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-building-columns"></i></div>
+          <h3>Fiscalité des Entreprises</h3>
+          <p>Optimisation fiscale, déclarations, conformité réglementaire. Maximisez votre performance tout en restant en règle.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Fiscalité des Particuliers</h3>
+          <p>Déclarations de revenus, conseil patrimonial, optimisation fiscale personnelle. Protégez et développez votre patrimoine.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h3>Audit &amp; Commissariat</h3>
+          <p>Audit légal et contractuel, commissariat aux comptes. Transparence et conformité garanties pour votre entreprise.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-gavel"></i></div>
+          <h3>Contentieux Fiscaux</h3>
+          <p>Défense et résolution de litiges fiscaux. Notre expertise juridique protège vos intérêts face à l'administration.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Conseil en Création</h3>
+          <p>Choix du statut juridique, business plan, formalités. Lancez votre entreprise sur des bases solides.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-users"></i></div>
+          <h3>Gestion de la Paie</h3>
+          <p>Bulletins de paie, charges sociales, déclarations. Conformité totale et tranquillité d'esprit pour votre gestion RH.</p>
+        </div>
+        <div class="svc-card" data-aos>
+          <div class="svc-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Conseil Juridique &amp; Fiscal</h3>
+          <p>Restructuration, fusion, transmission. Des stratégies sur-mesure pour accompagner votre croissance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section "Ce Qui Nous Distingue" (Why Us Cinématique) -->
+  <section id="why-us">
+    <div class="container">
+      <div class="section-head anim-fade-up">
+        <span class="tag">Pourquoi CEFC SARL</span>
+        <h2>Ce Qui Nous Distingue</h2>
+        <p>Choisir CEFC SARL, c'est choisir un partenaire d'affaires humain et engagé, qui transforme la rigueur réglementaire en opportunités de croissance.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" data-aos>
+          <div class="why-num">01</div>
+          <h3>Expertise Pluridisciplinaire</h3>
+          <p>Comptabilité, fiscalité, audit, juridique — une équipe complète d'experts agréés qui couvre tous vos besoins sous un même toit.</p>
+        </div>
+        <div class="why-card" data-aos>
+          <div class="why-num">02</div>
+          <h3>Accompagnement Sur-Mesure</h3>
+          <p>Chaque client est unique. Nous adaptons nos solutions avec flexibilité à votre taille, votre secteur d'activité et vos objectifs.</p>
+        </div>
+        <div class="why-card" data-aos>
+          <div class="why-num">03</div>
+          <h3>Réactivité &amp; Disponibilité</h3>
+          <p>Un interlocuteur humain dédié, des réponses rapides et un suivi continu. Nous sommes là quand vous en avez besoin.</p>
+        </div>
+        <div class="why-card" data-aos>
+          <div class="why-num">04</div>
+          <h3>Vision Long Terme</h3>
+          <p>Au-delà de la conformité légale, nous co-construisons avec vous une stratégie financière pérenne pour accompagner votre croissance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Philosophie "Le Manifeste" (Dark background, high contrast) -->
+  <section id="philosophy">
+    <div class="philosophy-bg-pattern"></div>
+    <div class="container philosophy-container">
+      <div class="manifesto-box anim-fade-up">
+        <span class="tag">Le Manifeste</span>
+        <p class="manifesto-small">La plupart des cabinets comptables traditionnels se concentrent sur : la simple saisie comptable historique de chiffres passés.</p>
+        <p class="manifesto-large">
+          CEFC SARL se concentre sur : <span class="text-highlight">l'ingénierie fiscale proactive</span> et la création de valeur future pour les entrepreneurs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-text anim-fade-up">
+        <span class="tag">Notre Histoire</span>
+        <h2>Une Vision d'Excellence Portée par l'Innovation</h2>
+        <p class="lead">Fondé par <strong>M. Foguem Jonas</strong>, le CEFC SARL est né d'une conviction : chaque entreprise et chaque particulier mérite un accompagnement comptable et fiscal d'excellence, accessible et humain.</p>
+        <p>Basé à <strong>Douala</strong>, cœur économique du Cameroun, notre cabinet réunit une équipe d'experts passionnés qui allient rigueur technique et proximité relationnelle. Notre vision long terme nous pousse à innover constamment pour offrir des services à la hauteur des défis de nos clients.</p>
+        <div class="values">
+          <div class="val"><i class="fas fa-check-circle"></i> Rigueur &amp; Conformité</div>
+          <div class="val"><i class="fas fa-check-circle"></i> Proximité &amp; Écoute</div>
+          <div class="val"><i class="fas fa-check-circle"></i> Innovation &amp; Modernité</div>
+          <div class="val"><i class="fas fa-check-circle"></i> Confidentialité Absolue</div>
+        </div>
+      </div>
+      <div class="about-visual anim-fade-up">
+        <div class="quote-card">
+          <i class="fas fa-quote-left quote-icon"></i>
+          <p>« Notre mission est de permettre à chaque entrepreneur de se concentrer sur son métier, pendant que nous veillons à la santé financière et fiscale de son activité. »</p>
+          <div class="quote-author">
+            <strong>M. Foguem Jonas</strong>
+            <span>Fondateur, CEFC SARL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarification / Adhésion "Commencer" -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head anim-fade-up">
+        <span class="tag">Formules d'accompagnement</span>
+        <h2>Des Offres Adaptées à Votre Échelle</h2>
+        <p>Choisissez le niveau d'intervention dont votre structure a besoin pour prospérer en toute sérénité.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos>
+          <div class="p-header">
+            <h3>Essentiel</h3>
+            <p>Idéal pour TPE et Indépendants</p>
+            <div class="p-price">Sur Devis</div>
+          </div>
+          <ul class="p-features">
+            <li><i class="fas fa-check"></i> Tenue comptable générale</li>
+            <li><i class="fas fa-check"></i> Déclarations fiscales courantes (TVA, acomptes)</li>
+            <li><i class="fas fa-check"></i> Accès à la plateforme client</li>
+            <li><i class="fas fa-check"></i> 1 rendez-vous de suivi par trimestre</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full">Demander un Devis</a>
+        </div>
+        <div class="pricing-card card-featured" data-aos>
+          <div class="featured-badge">Recommandé</div>
+          <div class="p-header">
+            <h3>Performance</h3>
+            <p>Pour PME en pleine croissance</p>
+            <div class="p-price">Sur Devis</div>
+          </div>
+          <ul class="p-features">
+            <li><i class="fas fa-check"></i> Tenue comptable complète &amp; bilans</li>
+            <li><i class="fas fa-check"></i> Optimisation fiscale avancée</li>
+            <li><i class="fas fa-check"></i> Gestion sociale &amp; Paie (jusqu'à 20 salariés)</li>
+            <li><i class="fas fa-check"></i> Rendez-vous de conseil mensuel dédié</li>
+            <li><i class="fas fa-check"></i> Assistance en cas de contrôle fiscal</li>
+          </ul>
+          <button class="btn btn-primary btn-full open-rdv-btn">Prendre Rendez-vous</button>
+        </div>
+        <div class="pricing-card" data-aos>
+          <div class="p-header">
+            <h3>Entreprise</h3>
+            <p>Solution complète pour grandes structures</p>
+            <div class="p-price">Sur Devis</div>
+          </div>
+          <ul class="p-features">
+            <li><i class="fas fa-check"></i> Gestion comptable et analytique</li>
+            <li><i class="fas fa-check"></i> Audit légal &amp; Commissariat aux comptes</li>
+            <li><i class="fas fa-check"></i> Ingénierie fiscale &amp; juridique sur-mesure</li>
+            <li><i class="fas fa-check"></i> Intégration de tableaux de bord financiers</li>
+            <li><i class="fas fa-check"></i> Support prioritaire 24/7</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full">Contacter nos Experts</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="cta-banner">
+    <div class="container cta-inner">
+      <h2>Prêt à Sécuriser la Gestion Financière de Votre Entreprise ?</h2>
+      <p>Prenez rendez-vous avec nos experts pour un diagnostic gratuit de votre situation comptable et fiscale.</p>
+      <div class="cta-btns">
+        <button class="btn btn-primary btn-lg open-rdv-btn"><i class="fas fa-calendar-check"></i> Prendre Rendez-vous</button>
+        <a href="#contact" class="btn btn-outline btn-lg"><i class="fas fa-paper-plane"></i> Demander un Devis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Devis -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info anim-fade-up">
+        <span class="tag">Contact</span>
+        <h2>Parlons de Votre Projet</h2>
+        <p>Remplissez le formulaire et un expert vous recontactera sous 24h pour discuter de vos besoins.</p>
+        <div class="contact-items">
+          <div class="c-item"><div class="c-icon"><i class="fas fa-location-dot"></i></div><div><strong>Adresse</strong><p>Douala, Cameroun</p></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-phone"></i></div><div><strong>Téléphone</strong><p>+237 6XX XXX XXX</p></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><strong>Email</strong><p>contact@cefc-sarl.com</p></div></div>
+          <div class="c-item"><div class="c-icon"><i class="fas fa-clock"></i></div><div><strong>Horaires</strong><p>Lun – Ven : 8h – 17h · Sam : 9h – 13h</p></div></div>
+        </div>
+      </div>
+      <form id="contactForm" class="contact-form anim-fade-up">
+        <h3><i class="fas fa-file-invoice"></i> Demander un Devis Gratuit</h3>
+        <div class="form-row">
+          <div class="form-group"><label for="fname">Nom complet *</label><input type="text" id="fname" required placeholder="Votre nom complet"></div>
+          <div class="form-group"><label for="fphone">Téléphone *</label><input type="tel" id="fphone" required placeholder="+237 6XX XXX XXX"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="femail">Email</label><input type="email" id="femail" placeholder="votre@email.com"></div>
+          <div class="form-group"><label for="fcompany">Entreprise</label><input type="text" id="fcompany" placeholder="Nom de votre entreprise"></div>
+        </div>
+        <div class="form-group">
+          <label for="fservice">Service souhaité *</label>
+          <select id="fservice" required>
+            <option value="" disabled selected>Choisissez un service</option>
+            <option>Comptabilité Générale</option>
+            <option>Fiscalité des Entreprises</option>
+            <option>Fiscalité des Particuliers</option>
+            <option>Audit & Commissariat</option>
+            <option>Contentieux Fiscaux</option>
+            <option>Conseil en Création d'Entreprise</option>
+            <option>Gestion de la Paie</option>
+            <option>Conseil Juridique & Fiscal</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="fmsg">Message</label><textarea id="fmsg" rows="4" placeholder="Décrivez brièvement votre besoin..."></textarea></div>
+        <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Envoyer ma Demande</button>
+        <div id="formSuccess" class="form-success hidden"><i class="fas fa-check-circle"></i> Merci ! Votre demande a été envoyée. Nous vous recontacterons sous 24h.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- MODAL : Prise de Rendez-vous -->
+  <div class="rdv-overlay" id="rdvOverlay">
+    <div class="rdv-modal">
+      <button class="rdv-close" id="rdvClose"><i class="fas fa-times"></i></button>
+      <div class="rdv-header">
+        <div class="rdv-header-icon"><i class="fas fa-calendar-check"></i></div>
+        <h2>Prendre Rendez-vous</h2>
+        <p>Planifiez une consultation avec un expert CEFC SARL. Choisissez un créneau et nous confirmerons votre rendez-vous.</p>
+      </div>
+      <form id="rdvForm" class="rdv-form">
+        <div class="form-row">
+          <div class="form-group"><label for="rdvName">Nom complet *</label><input type="text" id="rdvName" required placeholder="Votre nom complet"></div>
+          <div class="form-group"><label for="rdvPhone">Téléphone *</label><input type="tel" id="rdvPhone" required placeholder="+237 6XX XXX XXX"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="rdvEmail">Email</label><input type="email" id="rdvEmail" placeholder="votre@email.com"></div>
+          <div class="form-group"><label for="rdvCompany">Entreprise</label><input type="text" id="rdvCompany" placeholder="Nom de votre entreprise"></div>
+        </div>
+        <div class="form-group">
+          <label for="rdvService">Objet du rendez-vous *</label>
+          <select id="rdvService" required>
+            <option value="" disabled selected>Quel sujet souhaitez-vous aborder ?</option>
+            <option>Consultation comptable initiale</option>
+            <option>Déclaration fiscale</option>
+            <option>Audit & Commissariat</option>
+            <option>Contentieux fiscal</option>
+            <option>Création d'entreprise</option>
+            <option>Optimisation fiscale</option>
+            <option>Gestion de la paie</option>
+            <option>Conseil juridique</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rdvDate">Date souhaitée *</label>
+            <input type="date" id="rdvDate" required>
+          </div>
+          <div class="form-group">
+            <label for="rdvTime">Heure souhaitée *</label>
+            <select id="rdvTime" required>
+              <option value="" disabled selected>Choisir un créneau</option>
+              <option>08h00 - 09h00</option>
+              <option>09h00 - 10h00</option>
+              <option>10h00 - 11h00</option>
+              <option>11h00 - 12h00</option>
+              <option>12h00 - 13h00</option>
+              <option>14h00 - 15h00</option>
+              <option>15h00 - 16h00</option>
+              <option>16h00 - 17h00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rdvMode">Mode de rendez-vous</label>
+          <div class="rdv-mode-options">
+            <label class="rdv-radio"><input type="radio" name="rdvMode" value="cabinet" checked><span class="rdv-radio-mark"></span><i class="fas fa-building"></i> Au cabinet</label>
+            <label class="rdv-radio"><input type="radio" name="rdvMode" value="visio"><span class="rdv-radio-mark"></span><i class="fas fa-video"></i> En visioconférence</label>
+            <label class="rdv-radio"><input type="radio" name="rdvMode" value="phone"><span class="rdv-radio-mark"></span><i class="fas fa-phone"></i> Par téléphone</label>
+          </div>
+        </div>
+        <div class="form-group"><label for="rdvNotes">Notes complémentaires</label><textarea id="rdvNotes" rows="3" placeholder="Informations utiles pour préparer le rendez-vous..."></textarea></div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg"><i class="fas fa-calendar-check"></i> Confirmer le Rendez-vous</button>
+        <div id="rdvSuccess" class="form-success hidden"><i class="fas fa-check-circle"></i> Rendez-vous enregistré ! Nous vous enverrons une confirmation par téléphone sous 24h.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span></div>
+        <p>Cabinet d'Expertise Comptable et Fiscale — Votre partenaire de confiance à Douala, Cameroun.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Comptabilité</a></li>
+          <li><a href="#services">Fiscalité</a></li>
+          <li><a href="#services">Audit</a></li>
+          <li><a href="#services">Contentieux</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Cabinet</h4>
+        <ul>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#why-us">Nos Avantages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Status &amp; Contact</h4>
+        <ul>
+          <li><i class="fas fa-location-dot"></i> Douala, Cameroun</li>
+          <li><i class="fas fa-phone"></i> +237 6XX XXX XXX</li>
+          <li>
+            <div class="status-indicator" id="adminTrigger" title="Double-cliquez pour ouvrir le tableau de bord Olivier" style="cursor: pointer;">
+              <span class="status-dot"></span>
+              <span class="status-text">Système Opérationnel</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 CEFC SARL — Cabinet d'Expertise Comptable et Fiscale. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL : Tableau de Bord Admin (Easter Egg pour Olivier) -->
+  <div class="rdv-overlay" id="adminOverlay">
+    <div class="rdv-modal admin-modal-theme" style="max-width: 900px; width: 95%;">
+      <button class="rdv-close" id="adminClose"><i class="fas fa-times"></i></button>
+      <div class="rdv-header">
+        <div class="rdv-header-icon" style="background: rgba(0, 210, 255, 0.08); border-color: rgba(0, 210, 255, 0.2);">
+          <i class="fas fa-chart-line" style="color: var(--primary-skyblue);"></i>
+        </div>
+        <h2>Tableau de Bord — CEFC SARL</h2>
+        <p>Espace réservé associé (Olivier). Gestion locale des rendez-vous et demandes de devis.</p>
+      </div>
+      
+      <div class="admin-tabs" style="display: flex; gap: 10px; margin-bottom: 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+        <button class="admin-tab-btn active" id="tabBtnRdv" data-tab="tab-rdv">Rendez-vous (<span id="count-rdv">0</span>)</button>
+        <button class="admin-tab-btn" id="tabBtnDevis" data-tab="tab-devis">Devis &amp; Contacts (<span id="count-devis">0</span>)</button>
+      </div>
+      
+      <div class="admin-tab-content" id="tab-rdv-content">
+        <div style="overflow-x: auto; max-height: 380px; margin-bottom: 24px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nom &amp; Entreprise</th>
+                <th>Contact</th>
+                <th>Sujet</th>
+                <th>Date &amp; Heure</th>
+                <th>Mode</th>
+                <th>Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="admin-rdv-list">
+              <!-- Rempli en JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="admin-tab-content hidden" id="tab-devis-content">
+        <div style="overflow-x: auto; max-height: 380px; margin-bottom: 24px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.05);">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Nom &amp; Entreprise</th>
+                <th>Contact</th>
+                <th>Service souhaité</th>
+                <th>Message</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="admin-devis-list">
+              <!-- Rempli en JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="admin-actions" style="display: flex; gap: 12px; justify-content: flex-end; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px;">
+        <button class="btn btn-outline" id="btnExportCsv" style="padding: 12px 24px; font-size: 0.85rem; border-color: rgba(255,255,255,0.15);"><i class="fas fa-file-csv"></i> Exporter Excel (CSV)</button>
+        <button class="btn btn-primary" id="btnClearData" style="padding: 12px 24px; font-size: 0.85rem; background: var(--accent-red); border-color: var(--accent-red);"><i class="fas fa-trash-can"></i> Réinitialiser les données</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
