@@ -956,6 +956,79 @@ button {
 }
 
 /* ==========================================
+   TESTIMONIALS (Avis Clients)
+   ========================================== */
+#testimonials {
+  padding: 100px 0;
+  background: var(--white);
+  position: relative;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 210, 255, 0.06);
+  border-color: rgba(0, 210, 255, 0.2);
+  background: var(--white);
+}
+
+.t-stars {
+  color: #ffbc00;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 4px;
+}
+
+.t-quote {
+  font-size: 0.98rem;
+  color: var(--gray-700);
+  font-style: italic;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.t-author strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  color: var(--primary-bg);
+  margin-bottom: 4px;
+}
+
+.t-author span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--gray-500);
+}
+
+.nav-link-rdv {
+  transition: var(--transition);
+}
+
+.nav-link-rdv:hover {
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+/* ==========================================
    CTA BANNER
    ========================================== */
 #cta-banner {
@@ -1563,6 +1636,7 @@ button {
   #why-us { padding: 60px 0; }
   #about { padding: 60px 0; }
   #pricing { padding: 60px 0; }
+  #testimonials { padding: 60px 0; }
   #contact { padding: 60px 0; }
   #philosophy { padding: 80px 0; }
   #cta-banner { padding: 60px 0; }
@@ -1570,6 +1644,15 @@ button {
   .section-head { margin-bottom: 40px; }
   .section-head h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
   .section-head p { font-size: 0.95rem; }
+
+  /* Testimonials responsive */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonial-card {
+    padding: 28px 24px;
+  }
 
   /* Services compact cards */
   .services-grid {
@@ -1695,6 +1778,10 @@ button {
 
   .why-card {
     padding: 22px 18px;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px;
   }
 
   .manifesto-large { font-size: 1.3rem; }
