@@ -264,6 +264,94 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Devis Modal Controllers ---------- */
+  const devisOverlay = document.getElementById('devisOverlay');
+  const devisClose = document.getElementById('devisClose');
+  const devisForm = document.getElementById('devisForm');
+  const devisSuccess = document.getElementById('devisSuccess');
+  const openDevisBtns = document.querySelectorAll('.open-devis-btn');
+
+  // Open modal handler
+  openDevisBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (devisOverlay) {
+        devisOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close modal handler
+  const closeDevisModal = () => {
+    if (devisOverlay) {
+      devisOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      if (devisSuccess) {
+        devisSuccess.classList.add('hidden');
+      }
+    }
+  };
+
+  if (devisClose) {
+    devisClose.addEventListener('click', closeDevisModal);
+  }
+
+  if (devisOverlay) {
+    devisOverlay.addEventListener('click', (e) => {
+      if (e.target === devisOverlay) {
+        closeDevisModal();
+      }
+    });
+  }
+
+  // Devis Form submission
+  if (devisForm) {
+    devisForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const btn = devisForm.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi de la demande...';
+      btn.disabled = true;
+
+      // Sauvegarder en local
+      const devisData = {
+        id: Date.now(),
+        name: document.getElementById('devisName').value,
+        phone: document.getElementById('devisPhone').value,
+        email: document.getElementById('devisEmail').value || 'Non renseigné',
+        company: document.getElementById('devisCompany').value || 'Non renseignée',
+        service: document.getElementById('devisService').value,
+        msg: document.getElementById('devisMsg').value || 'Aucun message',
+        timestamp: new Date().toLocaleString('fr-FR')
+      };
+
+      const devisList = JSON.parse(localStorage.getItem('cefc_devis') || '[]');
+      devisList.push(devisData);
+      localStorage.setItem('cefc_devis', JSON.stringify(devisList));
+
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check-circle"></i> Demande Envoyée !';
+        btn.style.background = '#22c55e';
+        btn.style.borderColor = '#22c55e';
+
+        if (devisSuccess) {
+          devisSuccess.classList.remove('hidden');
+        }
+
+        setTimeout(() => {
+          closeDevisModal();
+          devisForm.reset();
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 2500);
+      }, 1500);
+    });
+  }
+
   /* ---------- Admin Dashboard Controllers (Accès secret : Ctrl+Shift+A) ---------- */
   const adminOverlay = document.getElementById('adminOverlay');
   const adminClose = document.getElementById('adminClose');
