@@ -39,7 +39,7 @@
           <li><a href="#about">Cabinet</a></li>
           <li><a href="#pricing">Tarifs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#" class="nav-link-rdv open-rdv-btn" style="color: var(--primary-skyblue); font-weight: 700;">Prendre RDV</a></li>
+          <li class="mobile-cta-item"><button class="nav-cta open-rdv-btn">Prendre RDV</button></li>
         </ul>
         <button class="nav-cta open-rdv-btn">Prendre RDV</button>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
@@ -226,8 +226,8 @@
           </div>
           <ul class="p-features">
             <li><i class="fas fa-check"></i> Télédéclarations fiscales courantes (Impôts à versement spontané IGS)</li>
-            <li><i class="fas fa-check"></i> Déclaration simplifiée de l'Impôt Global Synthétique</li>
-            <li><i class="fas fa-check"></i> Formalités administratives et création rapide</li>
+            <li><i class="fas fa-check"></i> Établissement de la DSF de l'Impôt Général Synthétique</li>
+            <li><i class="fas fa-check"></i> Tenue de Comptabilité</li>
             <li><i class="fas fa-check"></i> Solutions flexibles et exécutions rapides sans engagement</li>
           </ul>
           <button class="btn btn-outline btn-full open-devis-btn">Demander un Devis</button>
@@ -242,7 +242,7 @@
           <ul class="p-features">
             <li><i class="fas fa-check"></i> Télédéclarations fiscales courantes (Impôts à versement spontané selon régime)</li>
             <li><i class="fas fa-check"></i> Tenue comptable complète (SYSCOHADA révisé)</li>
-            <li><i class="fas fa-check"></i> Élaboration et dépôt de la DSF Cameroun annuelle</li>
+            <li><i class="fas fa-check"></i> Élaboration et dépôt de la DSF</li>
             <li><i class="fas fa-check"></i> Assistance et défense rigoureuse en cas de contrôle fiscal</li>
             <li><i class="fas fa-check"></i> Relation de confiance et collaboration minutieuse</li>
           </ul>
@@ -256,8 +256,9 @@
           </div>
           <ul class="p-features">
             <li><i class="fas fa-check"></i> Télédéclarations fiscales courantes (Impôts à versement spontané Réel)</li>
+            <li><i class="fas fa-check"></i> Tenue de Comptabilité</li>
             <li><i class="fas fa-check"></i> Restructuration et apurement complet des comptes</li>
-            <li><i class="fas fa-check"></i> Montage de la DSF Cameroun et déclarations mensuelles</li>
+            <li><i class="fas fa-check"></i> Montage de la DSF et déclarations mensuelles</li>
             <li><i class="fas fa-check"></i> Audits comptables et financiers ponctuels d'envergure</li>
           </ul>
           <button class="btn btn-outline btn-full open-devis-btn">Demander un Devis</button>
@@ -355,14 +356,14 @@
           <label for="fservice">Service souhaité *</label>
           <select id="fservice" required>
             <option value="" disabled selected>Choisissez un service</option>
-            <option>Comptabilité Générale</option>
-            <option>Fiscalité des Entreprises</option>
-            <option>Fiscalité des Particuliers</option>
-            <option>Audit & Commissariat</option>
-            <option>Contentieux Fiscaux</option>
-            <option>Conseil en Création d'Entreprise</option>
-            <option>Gestion de la Paie</option>
-            <option>Conseil Juridique & Fiscal</option>
+            <option>Tenue de Comptabilité</option>
+            <option>Télédéclarations fiscales courantes</option>
+            <option>Établissement / Montage de la DSF</option>
+            <option>Restructuration et apurement des comptes</option>
+            <option>Assistance en cas de contrôle fiscal</option>
+            <option>Audits comptables et financiers</option>
+            <option>Optimisation fiscale</option>
+            <option>Création d'entreprise</option>
             <option>Autre</option>
           </select>
         </div>
@@ -395,12 +396,14 @@
           <label for="devisService">Service souhaité *</label>
           <select id="devisService" required>
             <option value="" disabled selected>Choisissez un service</option>
-            <option>Comptabilité Générale</option>
-            <option>Fiscalité des Entreprises</option>
-            <option>Audit &amp; Commissariat</option>
-            <option>Contentieux Fiscaux</option>
-            <option>Création d'Entreprise</option>
-            <option>Gestion de la Paie</option>
+            <option>Tenue de Comptabilité</option>
+            <option>Télédéclarations fiscales courantes</option>
+            <option>Établissement / Montage de la DSF</option>
+            <option>Restructuration et apurement des comptes</option>
+            <option>Assistance en cas de contrôle fiscal</option>
+            <option>Audits comptables et financiers</option>
+            <option>Optimisation fiscale</option>
+            <option>Création d'entreprise</option>
             <option>Autre</option>
           </select>
         </div>
@@ -433,14 +436,13 @@
           <label for="rdvService">Objet du rendez-vous *</label>
           <select id="rdvService" required>
             <option value="" disabled selected>Quel sujet souhaitez-vous aborder ?</option>
+            <option>Offre Performance — Tenue comptable complète (SYSCOHADA)</option>
+            <option>Offre Performance — Élaboration et dépôt de la DSF</option>
+            <option>Offre Performance — Télédéclarations fiscales courantes</option>
+            <option>Offre Performance — Assistance contrôle fiscal</option>
+            <option>Offre Performance — Accompagnement global Sur Contrat</option>
             <option>Consultation comptable initiale</option>
-            <option>Déclaration fiscale</option>
-            <option>Audit & Commissariat</option>
-            <option>Contentieux fiscal</option>
-            <option>Création d'entreprise</option>
             <option>Optimisation fiscale</option>
-            <option>Gestion de la paie</option>
-            <option>Conseil juridique</option>
             <option>Autre</option>
           </select>
         </div>
