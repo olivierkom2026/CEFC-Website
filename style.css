@@ -1232,6 +1232,109 @@ button {
 }
 
 /* ==========================================
+   FAQ (Foire Aux Questions)
+   ========================================== */
+#faq {
+  padding: 100px 0;
+  background: var(--gray-50);
+}
+
+.faq-grid {
+  max-width: 860px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 210, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-bg);
+  transition: var(--transition);
+}
+
+.faq-trigger:focus {
+  outline: none;
+}
+
+.faq-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 210, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: var(--primary-skyblue);
+  font-size: 0.95rem;
+}
+
+.faq-trigger:hover .faq-icon-box {
+  background: var(--primary-skyblue);
+  color: var(--white);
+}
+
+.faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 28px;
+}
+
+.faq-panel p {
+  color: var(--gray-600);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+/* Active State */
+.faq-item.active {
+  border-color: var(--primary-skyblue);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item.active .faq-trigger {
+  color: var(--primary-skyblue);
+}
+
+.faq-item.active .faq-icon-box {
+  background: var(--primary-skyblue);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+
+.faq-item.active .faq-panel {
+  max-height: 500px;
+  padding: 0 28px 8px;
+}
+
+/* ==========================================
    MODAL : PRISE DE RENDEZ-VOUS
    ========================================== */
 .rdv-overlay {
@@ -1750,6 +1853,19 @@ button {
 
   /* Contact */
   .contact-form { padding: 32px 24px; }
+
+  /* FAQ */
+  #faq { padding: 60px 0; }
+  .faq-trigger {
+    padding: 18px 20px;
+    font-size: 0.98rem;
+  }
+  .faq-panel {
+    padding: 0 20px;
+  }
+  .faq-item.active .faq-panel {
+    padding: 0 20px 8px;
+  }
 
   /* Manifesto */
   .manifesto-large { font-size: clamp(1.4rem, 4vw, 2.2rem); }

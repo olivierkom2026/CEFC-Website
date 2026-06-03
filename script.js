@@ -579,4 +579,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
+  /* ---------- FAQ Accordion ---------- */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+
 });
