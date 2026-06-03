@@ -443,7 +443,7 @@ button {
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px 100px;
+  padding: 140px 24px 100px;
   position: relative;
   z-index: 2;
 }
@@ -1732,6 +1732,7 @@ button {
   .stat-num { font-size: clamp(2rem, 8vw, 2.8rem); }
 
   /* Hero */
+  .hero-wrapper { padding-top: 100px; }
   .hero-content { padding-bottom: 40px; }
   .hero-ctas {
     flex-direction: column;
