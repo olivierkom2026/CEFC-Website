@@ -1591,21 +1591,24 @@ button {
     display: none;
   }
 
-  /* Desktop CTA hidden on mobile */
+  /* Desktop CTA optimized and visible on mobile top bar */
   .nav-container > .nav-cta {
-    display: none;
+    display: inline-block !important;
+    font-size: 0.78rem;
+    padding: 8px 16px;
+    margin-left: auto;
+    margin-right: 12px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 210, 255, 0.2);
   }
 
   .mobile-toggle {
     display: flex;
   }
 
-  /* Show mobile CTA inside drawer */
+  /* Hide mobile drawer duplication */
   .mobile-cta-item {
-    display: block !important;
-    margin-top: 8px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: none !important;
   }
 
   /* Navigation Mobile drawer open */
@@ -1682,7 +1685,43 @@ button {
   /* About */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
+  }
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .about-text .lead {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  .about-text p {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  .values {
+    gap: 8px;
+  }
+  .val {
+    font-size: 0.82rem;
+  }
+  .quote-card {
+    padding: 24px 20px;
+  }
+  .quote-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .quote-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .quote-author strong {
+    font-size: 0.9rem;
+  }
+  .quote-author span {
+    font-size: 0.75rem;
   }
 
   /* Stats */
