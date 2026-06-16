@@ -1,0 +1,16 @@
+# Dossiers de dépendances
+node_modules/
+dist/
+
+# Fichiers de configuration locale (Secrets)
+.env
+
+# Base de données locale
+database.sqlite
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

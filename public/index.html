@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,6 +32,7 @@
     <nav id="navbar" class="floating-island">
       <div class="nav-container">
         <a href="#" class="logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
           <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
         </a>
         <ul class="nav-links" id="navLinks">
@@ -593,7 +595,10 @@
   <footer id="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo"><span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span></div>
+        <div class="footer-logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+        </div>
         <p>Cabinet d'Expertise Comptable et Fiscale — Votre partenaire de confiance à Douala, Cameroun.</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -633,6 +638,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- MODAL : Authentification Admin -->
+  <div class="rdv-overlay" id="adminLoginOverlay">
+    <div class="rdv-modal" style="max-width: 400px; width: 90%;">
+      <button class="rdv-close" id="adminLoginClose"><i class="fas fa-times"></i></button>
+      <div class="rdv-header">
+        <div class="rdv-header-icon" style="background: rgba(0, 210, 255, 0.08); border-color: rgba(0, 210, 255, 0.2);">
+          <i class="fas fa-lock" style="color: var(--primary-skyblue);"></i>
+        </div>
+        <h2>Accès Sécurisé</h2>
+        <p>Veuillez entrer le mot de passe administrateur pour accéder au Tableau de Bord.</p>
+      </div>
+      <form id="adminLoginForm" class="rdv-form" style="margin-top: 15px;">
+        <div class="form-group">
+          <label for="adminPassword">Mot de passe *</label>
+          <input type="password" id="adminPassword" required placeholder="Entrez le mot de passe" style="width: 100%;">
+        </div>
+        <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-sign-in-alt"></i> Se connecter</button>
+        <div id="adminLoginError" class="form-success hidden" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2); color: #ef4444; margin-top: 12px; font-size: 0.85rem;"><i class="fas fa-exclamation-circle"></i> Mot de passe incorrect.</div>
+      </form>
+    </div>
+  </div>
 
   <!-- MODAL : Tableau de Bord Admin (Easter Egg pour Olivier) -->
   <div class="rdv-overlay" id="adminOverlay">

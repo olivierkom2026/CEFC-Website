@@ -287,9 +287,23 @@ button {
   justify-content: space-between;
 }
 
-.logo {
+.logo, .footer-logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 38px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 210, 255, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.05);
 }
 
 .logo-mark {
