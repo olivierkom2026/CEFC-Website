@@ -218,15 +218,17 @@ button {
 }
 
 .btn-blue {
-  background: linear-gradient(135deg, #0066ff, #00bfff);
-  color: var(--white);
-  border: 1px solid transparent;
+  background: var(--primary-skyblue);
+  color: var(--primary-bg);
+  border: 1px solid var(--primary-skyblue);
+  font-weight: 700;
 }
 
 .btn-blue:hover {
-  background: linear-gradient(135deg, #0052cc, #0099ff);
-  border-color: transparent;
-  box-shadow: 0 8px 30px rgba(0, 102, 255, 0.35);
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--primary-bg);
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-lg {
