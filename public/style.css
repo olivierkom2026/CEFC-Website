@@ -217,6 +217,18 @@ button {
   border-color: var(--white);
 }
 
+.btn-blue {
+  background: linear-gradient(135deg, #0066ff, #00bfff);
+  color: var(--white);
+  border: 1px solid transparent;
+}
+
+.btn-blue:hover {
+  background: linear-gradient(135deg, #0052cc, #0099ff);
+  border-color: transparent;
+  box-shadow: 0 8px 30px rgba(0, 102, 255, 0.35);
+}
+
 .btn-lg {
   padding: 18px 40px;
   font-size: 1.05rem;
