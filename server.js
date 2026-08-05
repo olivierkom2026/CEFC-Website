@@ -57,6 +57,7 @@ const loginLimiter = rateLimit({
 // Middlewares globaux
 app.use(express.json()); // Permet de lire le JSON envoyé dans les requêtes
 app.use(express.static(path.join(__dirname, 'public'))); // Sert les fichiers statiques du frontend (dossier public)
+app.use(express.static(__dirname)); // Sert également la racine du projet (pour GitHub Pages)
 
 /**
  * -------------------------------------------------------------
