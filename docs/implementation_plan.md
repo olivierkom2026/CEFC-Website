@@ -29,7 +29,7 @@ Avant de passer à la technique, voici les fonctionnalités majeures à forte va
 Nous proposons une architecture **Full-Stack Node.js/Express** :
 * **Serveur Web** : Node.js avec le framework **Express** pour gérer la logique, les formulaires et servir les fichiers du site.
 * **Base de Données** : **SQLite** via `sqlite3`. C'est une base de données relationnelle légère qui stocke toutes les données dans un seul fichier local (`database.sqlite`). Elle ne nécessite aucune installation de serveur de base de données (idéal pour débuter).
-* **Notifications par Email** : Utilisation de **Nodemailer** pour envoyer des alertes mails automatiques à `cabinetcefc87@gmail.com` à chaque fois qu'un client remplit un formulaire.
+* **Notifications par Email** : Utilisation de **Nodemailer** pour envoyer des alertes mails automatiques à `cefcsarl@gmail.com` à chaque fois qu'un client remplit un formulaire.
 * **Sécurisation du Tableau de Bord Admin** : Remplacement de l'accès direct sans mot de passe (raccourci `Ctrl + Shift + A`) par un système d'authentification sécurisé (mot de passe stocké de manière chiffrée avec `bcryptjs`).
 
 ---
@@ -87,7 +87,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=votre-adresse-email@gmail.com
 SMTP_PASS=votre-mot-de-passe-d-application
-NOTIFICATION_EMAIL=cabinetcefc87@gmail.com
+NOTIFICATION_EMAIL=cefcsarl@gmail.com
 ```
 
 ### 4. Adaptation du Frontend (`public/script.js` et `public/index.html`)

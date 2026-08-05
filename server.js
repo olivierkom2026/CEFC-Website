@@ -145,7 +145,7 @@ async function sendNotificationEmail(subject, htmlContent) {
 
   const mailOptions = {
     from: `"CEFC SARL Robot" <${process.env.SMTP_USER}>`,
-    to: process.env.NOTIFICATION_EMAIL || 'cabinetcefc87@gmail.com',
+    to: process.env.NOTIFICATION_EMAIL || 'cefcsarl@gmail.com',
     subject: subject,
     html: htmlContent
   };

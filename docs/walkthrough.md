@@ -59,7 +59,7 @@ Le tableau de bord (Easter Egg) est désormais **hautement sécurisé** :
 ## 🔄 Mécanisme de Secours (Offline Fallback)
 
 Nous avons conçu le système pour qu'il soit ultra-robuste :
-* **Si le serveur fonctionne normalement** : Les rendez-vous et demandes de devis sont enregistrés dans la base de données SQL et un mail est instantanément envoyé à `cabinetcefc87@gmail.com`.
+* **Si le serveur fonctionne normalement** : Les rendez-vous et demandes de devis sont enregistrés dans la base de données SQL et un mail est instantanément envoyé à `cefcsarl@gmail.com`.
 * **Si le serveur est temporairement arrêté (ou hors ligne)** : Les données sont automatiquement stockées dans le navigateur (`localStorage`) avec une notification discrète jaune (ex: *"Envoyé (Hors ligne) !"*).
 * **Affichage unifié** : Le tableau de bord fusionne intelligemment les données de la base de données et celles de secours pour que vous ne perdiez **absolument aucun client**.
 
@@ -67,7 +67,7 @@ Nous avons conçu le système pour qu'il soit ultra-robuste :
 
 ## 📧 Envoi d'Emails Automatiques
 
-Pour activer l'envoi d'emails vers `cabinetcefc87@gmail.com` :
+Pour activer l'envoi d'emails vers `cefcsarl@gmail.com` :
 1. Si vous utilisez **Gmail** pour envoyer les alertes, allez dans les paramètres de sécurité de votre compte Google et activez la validation en deux étapes, puis générez un **Mot de passe d'application**.
 2. Ouvrez le fichier `.env` et mettez à jour ces lignes :
    ```env
