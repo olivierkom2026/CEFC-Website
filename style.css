@@ -1710,31 +1710,78 @@ button {
 
 @media (max-width: 768px) {
   .navbar-wrapper {
-    padding: 12px 16px;
+    padding: 8px 12px;
   }
 
   #navbar.floating-island {
-    border-radius: 24px;
-    padding: 10px 18px;
+    border-radius: 20px;
+    padding: 8px 14px;
+    width: 100%;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .logo-img {
+    height: 28px;
+    width: auto;
+    margin-right: 2px;
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .logo-sarl {
+    font-size: 0.45rem;
+    letter-spacing: 1px;
+    margin-left: 2px;
   }
 
   .nav-links {
     display: none;
   }
 
-  /* Desktop CTA optimized and visible on mobile top bar */
+  /* Desktop CTA optimized and visible on mobile top bar - Zero collision */
   .nav-container > .nav-cta {
-    display: inline-block !important;
-    font-size: 0.78rem;
-    padding: 8px 16px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 6px 14px;
     margin-left: auto;
-    margin-right: 12px;
-    border-radius: 30px;
+    margin-right: 6px;
+    border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 210, 255, 0.2);
+    flex-shrink: 0;
+    white-space: nowrap;
+    height: 32px;
+    line-height: 1;
   }
 
   .mobile-toggle {
     display: flex;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    padding: 5px;
   }
 
   /* Hide mobile drawer duplication */
@@ -1760,58 +1807,57 @@ button {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
-  /* Hide old absolute CTA - we use mobile-cta-item inside drawer now */
   .nav-cta.open {
     display: none;
   }
 
-  /* Sections tighter padding */
-  #services { padding: 60px 0; }
-  #why-us { padding: 60px 0; }
-  #about { padding: 60px 0; }
-  #pricing { padding: 60px 0; }
-  #testimonials { padding: 60px 0; }
-  #contact { padding: 60px 0; }
-  #philosophy { padding: 80px 0; }
-  #cta-banner { padding: 60px 0; }
-  #stats { padding: 40px 0; }
-  .section-head { margin-bottom: 40px; }
-  .section-head h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
-  .section-head p { font-size: 0.95rem; }
+  /* Sections tighter padding for mobile ergonomics */
+  #services { padding: 45px 0; }
+  #why-us { padding: 45px 0; }
+  #about { padding: 45px 0; }
+  #pricing { padding: 45px 0; }
+  #testimonials { padding: 45px 0; }
+  #contact { padding: 45px 0; }
+  #philosophy { padding: 50px 0; }
+  #cta-banner { padding: 45px 0; }
+  #stats { padding: 30px 0; }
+  .section-head { margin-bottom: 28px; }
+  .section-head h2 { font-size: clamp(1.45rem, 5vw, 1.85rem); line-height: 1.28; margin-bottom: 10px; }
+  .section-head p { font-size: 0.88rem; line-height: 1.5; }
 
   /* Testimonials responsive */
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
   .testimonial-card {
-    padding: 28px 24px;
+    padding: 22px 18px;
   }
 
   /* Services compact cards */
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 12px;
   }
   .svc-card {
-    padding: 22px 18px;
+    padding: 18px 14px;
     border-radius: var(--radius-md);
   }
   .svc-icon {
-    width: 42px;
-    height: 42px;
-    margin-bottom: 14px;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
     border-radius: var(--radius-sm);
   }
-  .svc-icon i { font-size: 1rem; }
-  .svc-card h3 { font-size: 0.95rem; margin-bottom: 6px; }
-  .svc-card p { font-size: 0.78rem; line-height: 1.5; }
+  .svc-icon i { font-size: 0.95rem; }
+  .svc-card h3 { font-size: 0.88rem; margin-bottom: 6px; }
+  .svc-card p { font-size: 0.75rem; line-height: 1.45; }
 
   /* Why Us compact */
-  .why-card { padding: 28px 22px; }
-  .why-num { font-size: 2.2rem; margin-bottom: 16px; }
-  .why-card h3 { font-size: 1.15rem; }
-  .why-card p { font-size: 0.88rem; }
+  .why-card { padding: 22px 18px; }
+  .why-num { font-size: 2rem; margin-bottom: 12px; }
+  .why-card h3 { font-size: 1.05rem; }
+  .why-card p { font-size: 0.82rem; }
 
   /* About */
   .about-grid {
@@ -1819,132 +1865,201 @@ button {
     gap: 20px;
   }
   .about-text h2 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-  }
-  .about-text .lead {
-    font-size: 0.95rem;
+    font-size: 1.45rem;
     margin-bottom: 10px;
   }
+  .about-text .lead {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
   .about-text p {
-    font-size: 0.85rem;
-    margin-bottom: 16px;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
   }
   .values {
     gap: 8px;
   }
   .val {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
   .quote-card {
-    padding: 24px 20px;
+    padding: 20px 16px;
   }
   .quote-icon {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
   }
   .quote-card p {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     line-height: 1.5;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .quote-author strong {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .quote-author span {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   /* Stats */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
-  .stat-num { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .stat-num { font-size: clamp(1.8rem, 7vw, 2.5rem); }
 
-  /* Hero */
-  .hero-wrapper { padding-top: 100px; }
-  .hero-content { padding-bottom: 40px; }
+  /* Hero Mobile Styling */
+  #hero {
+    min-height: auto;
+    padding-top: 85px;
+    padding-bottom: 40px;
+  }
+  .hero-wrapper {
+    padding: 20px 16px 30px;
+    width: 100%;
+  }
+  .hero-content {
+    padding-bottom: 10px;
+    max-width: 100%;
+  }
+  .hero-badge {
+    font-size: 0.68rem;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #hero h1 {
+    font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+  .hero-sub {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.85);
+  }
   .hero-ctas {
     flex-direction: column;
-    align-items: stretch;
+    gap: 10px;
+    width: 100%;
   }
-  .hero-ctas .btn { text-align: center; justify-content: center; }
-  #hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
-  .hero-sub { font-size: 1rem; }
-  .hero-badge { font-size: 0.65rem; padding: 6px 14px; }
+  .hero-ctas .btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   /* Pricing compact */
-  .pricing-card { padding: 32px 24px; }
-  .p-header h3 { font-size: 1.3rem; }
-  .p-price { font-size: 1.8rem; margin: 18px 0; }
+  .pricing-card { padding: 24px 18px; }
+  .p-header h3 { font-size: 1.2rem; }
+  .p-price { font-size: 1.6rem; margin: 14px 0; }
 
   /* Contact */
-  .contact-form { padding: 32px 24px; }
+  .contact-form { padding: 24px 18px; }
 
   /* FAQ */
-  #faq { padding: 60px 0; }
+  #faq { padding: 45px 0; }
   .faq-trigger {
-    padding: 18px 20px;
-    font-size: 0.98rem;
+    padding: 14px 16px;
+    font-size: 0.9rem;
   }
   .faq-panel {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   .faq-item.active .faq-panel {
-    padding: 0 20px 8px;
+    padding: 0 16px 8px;
   }
 
   /* Manifesto */
-  .manifesto-large { font-size: clamp(1.4rem, 4vw, 2.2rem); }
-  .manifesto-small { font-size: clamp(0.95rem, 2vw, 1.15rem); }
+  .manifesto-large { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+  .manifesto-small { font-size: clamp(0.88rem, 2vw, 1rem); }
 
   /* RDV Modal */
   .rdv-mode-options {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .rdv-modal { padding: 28px 20px; }
+  .rdv-modal { padding: 24px 18px; }
 
   /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
   #footer {
-    border-radius: 2rem 2rem 0 0;
-    padding-top: 50px;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding-top: 40px;
   }
 }
 
 @media (max-width: 480px) {
+  .navbar-wrapper {
+    padding: 6px 8px;
+  }
+
+  #navbar.floating-island {
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  .logo-img {
+    height: 24px;
+  }
+
+  .logo-mark {
+    font-size: 1.02rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-sarl {
+    display: none; /* Hide SARL text on ultra-small screens (<480px) to prevent any overlap */
+  }
+
+  .nav-container > .nav-cta {
+    font-size: 0.68rem;
+    padding: 5px 10px;
+    height: 28px;
+    margin-right: 4px;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
   .svc-card {
-    padding: 18px 14px;
+    padding: 14px 10px;
   }
   .svc-icon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 10px;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
   }
-  .svc-icon i { font-size: 0.9rem; }
-  .svc-card h3 { font-size: 0.85rem; }
-  .svc-card p { font-size: 0.72rem; line-height: 1.45; }
+  .svc-icon i { font-size: 0.85rem; }
+  .svc-card h3 { font-size: 0.82rem; }
+  .svc-card p { font-size: 0.7rem; line-height: 1.4; }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
   }
 
   .contact-form {
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
 
   .rdv-modal {
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
 
   .form-row {
@@ -1957,20 +2072,20 @@ button {
   }
 
   .pricing-card {
-    padding: 28px 18px;
+    padding: 22px 14px;
   }
 
   .why-card {
-    padding: 22px 18px;
+    padding: 18px 14px;
   }
 
   .testimonial-card {
-    padding: 24px 20px;
+    padding: 18px 14px;
   }
 
-  .manifesto-large { font-size: 1.3rem; }
+  .manifesto-large { font-size: 1.2rem; }
 
-  .footer-grid { gap: 28px; }
+  .footer-grid { gap: 24px; }
 }
 
 /* ==========================================
