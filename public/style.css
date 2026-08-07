@@ -2023,7 +2023,15 @@ button {
   }
 
   .logo-sarl {
-    display: none; /* Hide SARL text on ultra-small screens (<480px) to prevent any overlap */
+    display: inline-block !important;
+    font-size: 0.42rem;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    vertical-align: super;
+    background: linear-gradient(135deg, var(--primary-skyblue), #8ae7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .nav-container > .nav-cta {
