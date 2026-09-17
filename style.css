@@ -5,11 +5,16 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  /* Midnight Premium Palette */
+  /* Midnight Premium Palette & Executive Gold Accent */
   --primary-bg: #07090e;      /* Obsidienne ultra-sombre */
   --primary-navy: #0d111b;    /* Bleu nuit de confiance */
   --primary-blue: #162035;    /* Bleu d'expertise */
   --primary-skyblue: #00d2ff; /* Bleu ciel néon pour un éclat intense */
+  --accent-gold: #f59e0b;       /* Or prestige / Ambre noble */
+  --accent-gold-light: #fbbf24; /* Or éclatant */
+  --accent-gold-dark: #d97706;  /* Or institutionnel */
+  --accent-gold-glow: rgba(245, 158, 11, 0.35);
+  --primary-royal: #1d4ed8;     /* Bleu royal profond */
   --accent-red: #ff3344;      /* Accent rouge cinématique vif */
   --accent-hover: #e02232;
   --white: #ffffff;
@@ -728,7 +733,7 @@ button {
    PHILOSOPHIE "Le Manifeste" (Dark Segment)
    ========================================== */
 #philosophy {
-  background: var(--primary-bg);
+  background: radial-gradient(ellipse at 50% 0%, #111d3d 0%, #0b1226 60%, #07090e 100%);
   padding: 140px 0;
   position: relative;
   overflow: hidden;
@@ -737,8 +742,8 @@ button {
 .philosophy-bg-pattern {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.1) 0%, transparent 60%);
-  opacity: 0.7;
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.12) 0%, rgba(245, 158, 11, 0.05) 40%, transparent 70%);
+  opacity: 0.8;
 }
 
 .philosophy-container {
@@ -899,15 +904,29 @@ button {
 }
 
 .card-featured {
-  background: var(--primary-bg);
+  background: linear-gradient(160deg, #101c38 0%, #091024 100%);
   color: var(--white);
-  border-color: var(--primary-skyblue);
+  border: 1.5px solid rgba(0, 210, 255, 0.4);
   transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 35px rgba(0, 210, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-skyblue), #fbbf24, transparent);
 }
 
 .card-featured:hover {
   border-color: var(--primary-skyblue);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 45px rgba(0, 210, 255, 0.3);
+  transform: scale(1.04) translateY(-4px);
 }
 
 .card-featured .p-header h3 {
@@ -915,33 +934,42 @@ button {
 }
 
 .card-featured .p-header p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .card-featured .p-price {
-  color: var(--primary-skyblue);
+  background: linear-gradient(135deg, var(--primary-skyblue) 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
 }
 
 .card-featured .p-features li {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .card-featured .p-features i {
-  color: var(--primary-skyblue);
+  color: #fbbf24;
 }
 
 .featured-badge {
   position: absolute;
   top: 24px;
   right: 24px;
-  background: var(--primary-skyblue);
-  color: var(--primary-bg);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #07090e;
   font-family: var(--font-data);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 30px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .p-header h3 {

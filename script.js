@@ -325,25 +325,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const devisSuccess = document.getElementById('devisSuccess');
   const openDevisBtns = document.querySelectorAll('.open-devis-btn');
 
-  // Pre-select plan in devis page if ?plan=igs or ?plan=reel
-  if (requestedPlan) {
+  // Helper for interactive plan selection on devis.html
+  window.selectDevisPlan = function(plan) {
+    const cardIgs = document.getElementById('cardPlanIgs');
+    const cardReel = document.getElementById('cardPlanReel');
     const devisServiceSelect = document.getElementById('devisService');
     const planBadgeContainer = document.getElementById('planBadgeContainer');
     const planBadgeText = document.getElementById('planBadgeText');
 
+    if (plan === 'igs') {
+      if (cardIgs) cardIgs.classList.add('active');
+      if (cardReel) cardReel.classList.remove('active');
+      if (devisServiceSelect) devisServiceSelect.value = "Télédéclarations fiscales courantes";
+      if (planBadgeContainer && planBadgeText) {
+        planBadgeText.textContent = "Offre sélectionnée : Entreprise de l'IGS";
+        planBadgeContainer.classList.remove('hidden');
+      }
+    } else if (plan === 'reel') {
+      if (cardReel) cardReel.classList.add('active');
+      if (cardIgs) cardIgs.classList.remove('active');
+      if (devisServiceSelect) devisServiceSelect.value = "Tenue de Comptabilité";
+      if (planBadgeContainer && planBadgeText) {
+        planBadgeText.textContent = "Offre sélectionnée : Entreprise du Réel";
+        planBadgeContainer.classList.remove('hidden');
+      }
+    }
+  };
+
+  // Pre-select plan in devis page if ?plan=igs or ?plan=reel
+  if (requestedPlan) {
+    const devisServiceSelect = document.getElementById('devisService');
     if (devisServiceSelect) {
       if (requestedPlan.toLowerCase() === 'igs') {
-        devisServiceSelect.value = "Offre Entreprise de l'IGS";
-        if (planBadgeContainer && planBadgeText) {
-          planBadgeText.textContent = "Offre Entreprise de l'IGS";
-          planBadgeContainer.classList.remove('hidden');
-        }
+        window.selectDevisPlan('igs');
       } else if (requestedPlan.toLowerCase() === 'reel') {
-        devisServiceSelect.value = "Offre Entreprise du Réel";
-        if (planBadgeContainer && planBadgeText) {
-          planBadgeText.textContent = "Offre Entreprise du Réel";
-          planBadgeContainer.classList.remove('hidden');
-        }
+        window.selectDevisPlan('reel');
       }
     }
   }

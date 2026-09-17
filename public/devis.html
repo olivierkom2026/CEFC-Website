@@ -14,7 +14,7 @@
   <style>
     /* ========== PAGE DEVIS ÉLÉGANTE & CHARISMATIQUE ========== */
     body.devis-page {
-      background: #07090e;
+      background: radial-gradient(ellipse at 50% 0%, #111d3d 0%, #0b1226 50%, #060914 100%);
       color: var(--white);
       position: relative;
       overflow-x: hidden;
@@ -23,14 +23,14 @@
       flex-direction: column;
     }
 
-    /* Halos d'ambiance lumineux animés */
+    /* Halos d'ambiance lumineux animés (Cyan, Saphir, Or) */
     .glow-orb-devis-1 {
       position: fixed;
       top: 5%;
       right: -10%;
       width: 650px;
       height: 650px;
-      background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, rgba(7, 9, 14, 0) 70%);
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.16) 0%, rgba(7, 9, 14, 0) 70%);
       filter: blur(85px);
       z-index: 0;
       pointer-events: none;
@@ -41,13 +41,26 @@
       position: fixed;
       bottom: 10%;
       left: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(22, 32, 53, 0.6) 0%, rgba(0, 102, 255, 0.09) 40%, rgba(7, 9, 14, 0) 70%);
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(30, 64, 175, 0.35) 0%, rgba(0, 102, 255, 0.1) 40%, rgba(7, 9, 14, 0) 70%);
       filter: blur(95px);
       z-index: 0;
       pointer-events: none;
       animation: floatGlowDevis 20s ease-in-out infinite alternate-reverse;
+    }
+
+    .glow-orb-devis-gold {
+      position: fixed;
+      top: 40%;
+      left: 20%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.09) 0%, rgba(7, 9, 14, 0) 70%);
+      filter: blur(85px);
+      z-index: 0;
+      pointer-events: none;
+      animation: floatGlowDevis 24s ease-in-out infinite alternate;
     }
 
     @keyframes floatGlowDevis {
@@ -120,17 +133,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(0, 210, 255, 0.08);
-      border: 1px solid rgba(0, 210, 255, 0.25);
-      color: var(--primary-skyblue);
-      padding: 6px 14px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+      padding: 6px 16px;
       border-radius: 50px;
       font-family: var(--font-data);
-      font-size: 0.72rem;
-      font-weight: 600;
+      font-size: 0.74rem;
+      font-weight: 700;
       letter-spacing: 0.5px;
       margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.18);
     }
 
     .side-title {
@@ -145,9 +158,12 @@
 
     .side-title em {
       font-family: var(--font-dramatic);
-      font-weight: 500;
+      font-weight: 600;
       font-style: italic;
-      color: var(--primary-skyblue);
+      background: linear-gradient(135deg, #00d2ff 0%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .side-lead {
@@ -162,28 +178,108 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
 
     .plan-item-box {
-      background: rgba(13, 17, 27, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 16px 20px;
+      background: linear-gradient(145deg, rgba(20, 31, 58, 0.65) 0%, rgba(12, 19, 36, 0.8) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 22px;
       border-radius: var(--radius-md);
       transition: var(--transition);
       cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
     }
 
     .plan-item-box:hover {
-      border-color: rgba(0, 210, 255, 0.3);
-      background: rgba(13, 17, 27, 0.75);
+      border-color: rgba(0, 210, 255, 0.4);
+      background: linear-gradient(145deg, rgba(26, 40, 75, 0.8) 0%, rgba(15, 24, 46, 0.9) 100%);
       transform: translateX(4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(0, 210, 255, 0.15);
     }
 
     .plan-item-box.active {
       border-color: var(--primary-skyblue);
-      background: rgba(0, 210, 255, 0.08);
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+      background: linear-gradient(145deg, rgba(0, 210, 255, 0.12) 0%, rgba(13, 27, 56, 0.85) 100%);
+      box-shadow: 0 0 30px rgba(0, 210, 255, 0.25), inset 0 0 15px rgba(0, 210, 255, 0.08);
+    }
+
+    .plan-item-box.active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary-skyblue), #fbbf24);
+    }
+
+    /* Passerelle vers Contrat */
+    .contract-callout-card {
+      background: linear-gradient(145deg, rgba(30, 41, 75, 0.5) 0%, rgba(16, 22, 42, 0.7) 100%);
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+      transition: var(--transition);
+    }
+
+    .contract-callout-card:hover {
+      border-color: #fbbf24;
+      background: linear-gradient(145deg, rgba(35, 49, 90, 0.65) 0%, rgba(18, 26, 50, 0.85) 100%);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+    }
+
+    .contract-callout-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fbbf24;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contract-callout-info h5 {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .contract-callout-info p {
+      font-size: 0.82rem;
+      color: var(--gray-300);
+      line-height: 1.45;
+    }
+
+    .contract-callout-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      border-radius: 50px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .contract-callout-btn:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #07090e;
+      border-color: #fbbf24;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+      transform: translateY(-2px);
     }
 
     .plan-item-top {
@@ -246,13 +342,13 @@
 
     /* Colonne Droite : Formulaire */
     .devis-form-card {
-      background: rgba(13, 17, 27, 0.88);
+      background: linear-gradient(160deg, rgba(16, 26, 50, 0.92) 0%, rgba(10, 16, 32, 0.97) 100%);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: var(--radius-xl);
       padding: 44px 40px;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 210, 255, 0.05);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 45px rgba(0, 210, 255, 0.08);
       position: relative;
     }
 
@@ -263,7 +359,7 @@
       left: 10%;
       right: 10%;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--primary-skyblue), transparent);
+      background: linear-gradient(90deg, transparent, var(--primary-skyblue), #fbbf24, transparent);
     }
 
     .card-header-box {
@@ -423,6 +519,7 @@
   <!-- Halos d'ambiance lumineux animés -->
   <div class="glow-orb-devis-1"></div>
   <div class="glow-orb-devis-2"></div>
+  <div class="glow-orb-devis-gold"></div>
   <div class="bg-watermark"></div>
 
   <!-- Overlay bruit cinématique -->
@@ -478,9 +575,9 @@
           Chaque entreprise a des obligations fiscales et un volume d'écritures uniques. Remplissez ce formulaire pour recevoir sous 24h une proposition financière précise, transparente et conforme au référentiel SYSCOHADA.
         </p>
 
-        <!-- Piliers tarifaires interactifs -->
+        <!-- Les Deux Tarifs sur Devis -->
         <div class="plan-summary-cards">
-          <div class="plan-item-box" id="cardPlanIgs">
+          <div class="plan-item-box active" id="cardPlanIgs" onclick="selectDevisPlan('igs')">
             <div class="plan-item-top">
               <h4>Entreprise de l'IGS</h4>
               <span class="plan-item-tag">Sur Devis</span>
@@ -488,21 +585,26 @@
             <p>Idéal pour les PE du régime de l'IGS. Télédéclarations fiscales mensuelles courantes, établissement de la DSF simplifiée et tenue comptable sans engagement.</p>
           </div>
 
-          <div class="plan-item-box" id="cardPlanReel">
+          <div class="plan-item-box" id="cardPlanReel" onclick="selectDevisPlan('reel')">
             <div class="plan-item-top">
               <h4>Entreprise du Réel</h4>
               <span class="plan-item-tag">Sur Devis</span>
             </div>
             <p>Idéal pour les PME &amp; structures du régime du Réel. Tenue comptable complète, apurement des comptes, montage de la DSF et audits de régularité fiscale.</p>
           </div>
+        </div>
 
-          <div class="plan-item-box" id="cardPlanPerformance">
-            <div class="plan-item-top">
-              <h4>Pack Performance</h4>
-              <span class="plan-item-tag">Sur Contrat</span>
-            </div>
-            <p>Accompagnement 360° incluant assistance continue lors des contrôles fiscaux, conseils de gestion et pilotage financier de vos bilans.</p>
+        <!-- Passerelle vers Contrat Performance -->
+        <div class="contract-callout-card">
+          <div class="contract-callout-info">
+            <span class="contract-callout-badge"><i class="fas fa-crown"></i> Formule Annuelle Sur Contrat</span>
+            <h5>Besoin d'un Accompagnement 360° Tout Compris ?</h5>
+            <p>Découvrez notre Offre <strong>Performance</strong> : tenue comptable exhaustive SYSCOHADA, bilans, DSF et assistance continue lors des contrôles fiscaux.</p>
           </div>
+          <a href="rdv.html?plan=performance" class="contract-callout-btn">
+            <span><i class="fas fa-calendar-check"></i> Confirmer ma demande de rendez-vous</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
         <!-- Badges de garantie -->
@@ -562,19 +664,18 @@
 
           <!-- Prestation -->
           <div class="field-single">
-            <label class="custom-label" for="devisService">Formule ou Prestation souhaitée <span>*</span></label>
+            <label class="custom-label" for="devisService">Service souhaité <span>*</span></label>
             <select id="devisService" class="custom-select" required>
-              <option value="" disabled selected>Sélectionnez la formule d'intervention</option>
-              <option value="Offre Entreprise de l'IGS">Offre Entreprise de l'IGS (Impôt Général Synthétique)</option>
-              <option value="Offre Entreprise du Réel">Offre Entreprise du Réel (Comptabilité SYSCOHADA &amp; DSF)</option>
-              <option value="Offre Performance - Accompagnement global">Offre Performance — Accompagnement global Sur Contrat</option>
-              <option value="Tenue de Comptabilité courante">Tenue de Comptabilité courante</option>
+              <option value="" disabled selected>Sélectionnez le service souhaité</option>
+              <option value="Tenue de Comptabilité">Tenue de Comptabilité</option>
               <option value="Télédéclarations fiscales courantes">Télédéclarations fiscales courantes</option>
               <option value="Établissement / Montage de la DSF">Établissement / Montage de la DSF</option>
               <option value="Restructuration et apurement des comptes">Restructuration et apurement des comptes</option>
               <option value="Assistance en cas de contrôle fiscal">Assistance en cas de contrôle fiscal</option>
               <option value="Audits comptables et financiers">Audits comptables et financiers</option>
-              <option value="Autre demande">Autre prestation spécifique</option>
+              <option value="Optimisation fiscale">Optimisation fiscale</option>
+              <option value="Création d'entreprise">Création d'entreprise</option>
+              <option value="Autre">Autre</option>
             </select>
           </div>
 
