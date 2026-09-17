@@ -126,7 +126,7 @@ function getEmailTransporter() {
   }
 
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: false, // false pour le port 587 (TLS)
     auth: {
