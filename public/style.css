@@ -983,6 +983,21 @@ button {
   color: var(--primary-skyblue);
 }
 
+.pricing-card .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-top: auto;
+  letter-spacing: 0.2px;
+}
+
 /* ==========================================
    TESTIMONIALS (Avis Clients)
    ========================================== */
@@ -2080,7 +2095,16 @@ button {
   }
 
   .pricing-card {
-    padding: 22px 14px;
+    padding: 24px 16px;
+  }
+
+  .pricing-card .btn {
+    padding: 13px 16px;
+    font-size: 0.88rem;
+    gap: 8px;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
   }
 
   .why-card {
