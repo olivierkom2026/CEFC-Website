@@ -14,7 +14,7 @@
   <style>
     /* ========== PAGE RENDEZ-VOUS ÉLÉGANTE & CHARISMATIQUE ========== */
     body.rdv-page {
-      background: radial-gradient(ellipse at 50% 0%, #111d3d 0%, #0b1226 50%, #060914 100%);
+      background: #07090e;
       color: var(--white);
       position: relative;
       overflow-x: hidden;
@@ -23,14 +23,14 @@
       flex-direction: column;
     }
 
-    /* Halos de lumière vivants en arrière-plan (Cyan, Saphir, Or) */
+    /* Halos de lumière vivants en arrière-plan */
     .glow-orb-1 {
       position: fixed;
-      top: 8%;
+      top: 10%;
       left: -10%;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(0, 210, 255, 0.16) 0%, rgba(7, 9, 14, 0) 70%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, rgba(7, 9, 14, 0) 70%);
       filter: blur(80px);
       z-index: 0;
       pointer-events: none;
@@ -41,26 +41,13 @@
       position: fixed;
       bottom: 5%;
       right: -10%;
-      width: 750px;
-      height: 750px;
-      background: radial-gradient(circle, rgba(30, 64, 175, 0.35) 0%, rgba(0, 102, 255, 0.1) 40%, rgba(7, 9, 14, 0) 70%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(22, 32, 53, 0.6) 0%, rgba(0, 102, 255, 0.08) 40%, rgba(7, 9, 14, 0) 70%);
       filter: blur(90px);
       z-index: 0;
       pointer-events: none;
       animation: floatGlow 18s ease-in-out infinite alternate-reverse;
-    }
-
-    .glow-orb-gold {
-      position: fixed;
-      top: 35%;
-      right: 20%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.09) 0%, rgba(7, 9, 14, 0) 70%);
-      filter: blur(85px);
-      z-index: 0;
-      pointer-events: none;
-      animation: floatGlow 22s ease-in-out infinite alternate;
     }
 
     @keyframes floatGlow {
@@ -134,17 +121,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: #fbbf24;
-      padding: 6px 16px;
+      background: rgba(0, 210, 255, 0.08);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      color: var(--primary-skyblue);
+      padding: 6px 14px;
       border-radius: 50px;
       font-family: var(--font-data);
-      font-size: 0.74rem;
-      font-weight: 700;
+      font-size: 0.72rem;
+      font-weight: 600;
       letter-spacing: 0.5px;
       margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(245, 158, 11, 0.18);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
     }
 
     .side-title {
@@ -159,12 +146,9 @@
 
     .side-title em {
       font-family: var(--font-dramatic);
-      font-weight: 600;
+      font-weight: 500;
       font-style: italic;
-      background: linear-gradient(135deg, #00d2ff 0%, #fbbf24 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--primary-skyblue);
     }
 
     .side-lead {
@@ -186,19 +170,17 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
-      background: linear-gradient(145deg, rgba(20, 31, 58, 0.65) 0%, rgba(12, 19, 36, 0.8) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 18px 22px;
+      background: rgba(13, 17, 27, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 16px 20px;
       border-radius: var(--radius-md);
       transition: var(--transition);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     }
 
     .auth-item:hover {
-      border-color: rgba(0, 210, 255, 0.35);
-      transform: translateY(-3px);
-      background: linear-gradient(145deg, rgba(26, 40, 75, 0.8) 0%, rgba(15, 24, 46, 0.9) 100%);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(0, 210, 255, 0.15);
+      border-color: rgba(0, 210, 255, 0.2);
+      transform: translateY(-2px);
+      background: rgba(13, 17, 27, 0.7);
     }
 
     .auth-icon {
@@ -285,13 +267,13 @@
 
     /* Colonne de Droite : Carte Formulaire Ultra-Moderne */
     .rdv-form-card {
-      background: linear-gradient(160deg, rgba(16, 26, 50, 0.92) 0%, rgba(10, 16, 32, 0.97) 100%);
+      background: rgba(13, 17, 27, 0.88);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-xl);
       padding: 44px 40px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 45px rgba(0, 210, 255, 0.08);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 210, 255, 0.05);
       position: relative;
     }
 
@@ -302,7 +284,7 @@
       left: 10%;
       right: 10%;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--primary-skyblue), #fbbf24, transparent);
+      background: linear-gradient(90deg, transparent, var(--primary-skyblue), transparent);
     }
 
     .card-header-box {
@@ -448,28 +430,29 @@
 
     .submit-btn-glow {
       width: 100%;
-      background: linear-gradient(135deg, #0066ff, #00d2ff);
-      color: #07090e;
+      background: var(--accent-red);
+      color: var(--white);
       font-family: var(--font-heading);
       font-size: 1rem;
-      font-weight: 800;
+      font-weight: 700;
       padding: 16px 28px;
       border-radius: 50px;
-      border: none;
+      border: 2px solid var(--accent-red);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       transition: var(--transition);
-      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.35);
+      box-shadow: 0 8px 30px rgba(255, 51, 68, 0.4);
       margin-top: 10px;
     }
 
     .submit-btn-glow:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 15px 45px rgba(0, 210, 255, 0.5);
-      background: linear-gradient(135deg, #ffffff, #00d2ff);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(255, 51, 68, 0.6);
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
     }
 
     .trust-footer-note {
@@ -520,7 +503,6 @@
   <!-- Halos d'ambiance lumineux animés -->
   <div class="glow-orb-1"></div>
   <div class="glow-orb-2"></div>
-  <div class="glow-orb-gold"></div>
   <div class="bg-watermark"></div>
 
   <!-- Overlay bruit cinématique -->
@@ -719,7 +701,7 @@
 
           <!-- Bouton Submit -->
           <button type="submit" class="submit-btn-glow">
-            <i class="fas fa-calendar-check"></i> Confirmer ma Demande de Rendez-vous
+            <i class="fas fa-calendar-check"></i> Confirmer mon rendez-vous
           </button>
 
           <div class="trust-footer-note">
