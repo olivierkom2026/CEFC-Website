@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de Devis Gratuit | CEFC SARL — Cabinet Comptable Douala</title>
+  <meta name="description" content="Demandez un devis comptable ou fiscal sur-mesure pour votre entreprise auprès des experts de CEFC SARL à Douala.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--primary-bg);
+      color: var(--white);
+    }
+    .form-page-section {
+      flex: 1;
+      padding: 130px 20px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .form-card {
+      background: rgba(13, 17, 27, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    .page-head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .page-head .tag {
+      margin-bottom: 12px;
+    }
+    .page-head h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .page-head p {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+    .back-home:hover {
+      color: var(--primary-skyblue);
+      transform: translateX(-4px);
+    }
+    .plan-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(0, 210, 255, 0.15);
+      color: var(--primary-skyblue);
+      margin-top: 8px;
+    }
+    @media (max-width: 768px) {
+      .form-page-section { padding: 100px 14px 50px; }
+      .form-card { padding: 24px 18px; border-radius: 20px; }
+    }
+  </style>
+</head>
+<body class="page-wrapper">
+
+  <!-- Overlay Global Bruit SVG -->
+  <svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+  <!-- Navigation -->
+  <header class="navbar-wrapper">
+    <nav id="navbar" class="floating-island">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#why-us">Avantages</a></li>
+          <li><a href="index.html#about">Cabinet</a></li>
+          <li><a href="index.html#pricing">Tarifs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="rdv.html" class="nav-cta">Prendre RDV</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-page-section">
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+
+    <div class="form-card">
+      <div class="page-head">
+        <span class="tag"><i class="fas fa-file-invoice"></i> Tarification &amp; Devis</span>
+        <h1 id="devisPageTitle">Demander un Devis Sur-Mesure</h1>
+        <p id="devisPageSub">Précisez vos besoins comptables ou fiscaux. Nos spécialistes étudient votre dossier et vous répondent sous 24h ouvrées.</p>
+        <div id="planBadgeContainer" class="hidden"><span class="plan-badge" id="planBadgeText">Offre sélectionnée</span></div>
+      </div>
+
+      <form id="devisForm" class="rdv-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="devisName">Nom complet *</label>
+            <input type="text" id="devisName" required placeholder="Ex: Paul Mbarga">
+          </div>
+          <div class="form-group">
+            <label for="devisPhone">Téléphone *</label>
+            <input type="tel" id="devisPhone" required placeholder="+237 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="devisEmail">Email *</label>
+            <input type="email" id="devisEmail" required placeholder="contact@votre-entreprise.com">
+          </div>
+          <div class="form-group">
+            <label for="devisCompany">Nom de l'entreprise *</label>
+            <input type="text" id="devisCompany" required placeholder="Ex: Douala Logistics SARL">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="devisService">Prestation ou Formule souhaitée *</label>
+          <select id="devisService" required>
+            <option value="" disabled selected>Choisissez une prestation</option>
+            <option value="Offre Entreprise de l'IGS">Offre Entreprise de l'IGS (Impôt Général Synthétique)</option>
+            <option value="Offre Entreprise du Réel">Offre Entreprise du Réel (Tenue comptable SYSCOHADA &amp; DSF)</option>
+            <option value="Offre Performance - Accompagnement global">Offre Performance — Accompagnement global Sur Contrat</option>
+            <option value="Tenue de Comptabilité courante">Tenue de Comptabilité courante</option>
+            <option value="Télédéclarations fiscales courantes">Télédéclarations fiscales courantes</option>
+            <option value="Établissement / Montage de la DSF">Établissement / Montage de la DSF</option>
+            <option value="Restructuration et apurement des comptes">Restructuration et apurement des comptes</option>
+            <option value="Assistance en cas de contrôle fiscal">Assistance en cas de contrôle fiscal</option>
+            <option value="Audits comptables et financiers">Audits comptables et financiers</option>
+            <option value="Autre demande">Autre prestation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="devisMsg">Description de votre activité ou de vos besoins spécifiques</label>
+          <textarea id="devisMsg" rows="4" placeholder="Décrivez votre activité, le volume moyen de factures, votre centre des impôts de rattachement..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-blue btn-full btn-lg"><i class="fas fa-paper-plane"></i> Envoyer ma Demande de Devis</button>
+        <div id="devisSuccess" class="form-success hidden" style="margin-top: 20px; padding: 16px; background: rgba(0, 210, 255, 0.1); border: 1px solid var(--primary-skyblue); border-radius: var(--radius-sm); text-align: center; color: var(--white);">
+          <i class="fas fa-check-circle" style="color: var(--primary-skyblue); font-size: 1.5rem; margin-bottom: 8px; display: block;"></i>
+          <strong>Votre demande a été envoyée avec succès !</strong><br>
+          <span style="font-size: 0.9rem; color: var(--gray-300);">Un expert du cabinet CEFC SARL prépare votre proposition chiffrée et vous recontactera sous 24h.</span>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+        </div>
+        <p>Cabinet d'Expertise Comptable et Fiscale — Votre partenaire de confiance à Douala, Cameroun.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#pricing">Tarifs</a></li>
+          <li><a href="index.html#about">À Propos</a></li>
+          <li><a href="rdv.html">Prendre RDV</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-location-dot"></i> Douala, Rue bébé Eyindi en Face lycée d'Akwa</li>
+          <li><i class="fas fa-phone"></i> <a href="https://wa.link/ett9di" target="_blank">Contact WhatsApp</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:cefcsarl@gmail.com">cefcsarl@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 CEFC SARL — Cabinet d'Expertise Comptable et Fiscale. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prendre Rendez-vous | CEFC SARL — Expertise Comptable et Fiscale Douala</title>
+  <meta name="description" content="Planifiez une consultation avec un expert-comptable de CEFC SARL à Douala ou en visioconférence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--primary-bg);
+      color: var(--white);
+    }
+    .form-page-section {
+      flex: 1;
+      padding: 130px 20px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .form-card {
+      background: rgba(13, 17, 27, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    .page-head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .page-head .tag {
+      margin-bottom: 12px;
+    }
+    .page-head h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .page-head p {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .rdv-mode-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .rdv-mode-label {
+      cursor: pointer;
+    }
+    .rdv-mode-label input {
+      display: none;
+    }
+    .mode-card {
+      padding: 14px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .mode-card i {
+      font-size: 1.2rem;
+      color: var(--primary-skyblue);
+    }
+    .rdv-mode-label input:checked + .mode-card {
+      border-color: var(--primary-skyblue);
+      background: rgba(0, 210, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+    .back-home:hover {
+      color: var(--primary-skyblue);
+      transform: translateX(-4px);
+    }
+    @media (max-width: 768px) {
+      .form-page-section { padding: 100px 14px 50px; }
+      .form-card { padding: 24px 18px; border-radius: 20px; }
+      .rdv-mode-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="page-wrapper">
+
+  <!-- Overlay Global Bruit SVG -->
+  <svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+  </svg>
+
+  <!-- Navigation -->
+  <header class="navbar-wrapper">
+    <nav id="navbar" class="floating-island">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#why-us">Avantages</a></li>
+          <li><a href="index.html#about">Cabinet</a></li>
+          <li><a href="index.html#pricing">Tarifs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="devis.html" class="nav-cta">Demander un Devis</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-page-section">
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+
+    <div class="form-card">
+      <div class="page-head">
+        <span class="tag"><i class="fas fa-calendar-check"></i> Consultation</span>
+        <h1>Prendre Rendez-vous</h1>
+        <p>Planifiez une consultation stratégique avec un expert-comptable de CEFC SARL. Choisissez votre créneau, nous vous confirmons l'entretien sous 24h.</p>
+      </div>
+
+      <form id="rdvForm" class="rdv-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rdvName">Nom complet *</label>
+            <input type="text" id="rdvName" required placeholder="Ex: Jean Dupont">
+          </div>
+          <div class="form-group">
+            <label for="rdvPhone">Téléphone *</label>
+            <input type="tel" id="rdvPhone" required placeholder="+237 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rdvEmail">Email *</label>
+            <input type="email" id="rdvEmail" required placeholder="contact@votre-entreprise.com">
+          </div>
+          <div class="form-group">
+            <label for="rdvCompany">Nom de l'entreprise</label>
+            <input type="text" id="rdvCompany" placeholder="Ex: ETS Excellence SARL">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rdvService">Objet du rendez-vous *</label>
+          <select id="rdvService" required>
+            <option value="" disabled selected>Quel sujet souhaitez-vous aborder ?</option>
+            <option>Offre Performance — Tenue comptable complète (SYSCOHADA)</option>
+            <option>Offre Performance — Élaboration et dépôt de la DSF</option>
+            <option>Offre Performance — Télédéclarations fiscales courantes</option>
+            <option>Offre Performance — Assistance contrôle fiscal</option>
+            <option>Offre Performance — Accompagnement global Sur Contrat</option>
+            <option>Consultation comptable initiale</option>
+            <option>Optimisation fiscale</option>
+            <option>Autre besoin spécifique</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rdvDate">Date souhaitée *</label>
+            <input type="date" id="rdvDate" required>
+          </div>
+          <div class="form-group">
+            <label for="rdvTime">Heure souhaitée *</label>
+            <select id="rdvTime" required>
+              <option value="" disabled selected>Choisir un créneau</option>
+              <option>08h00 - 09h00</option>
+              <option>09h00 - 10h00</option>
+              <option>10h00 - 11h00</option>
+              <option>11h00 - 12h00</option>
+              <option>14h00 - 15h00</option>
+              <option>15h00 - 16h00</option>
+              <option>16h00 - 17h00</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mode de consultation</label>
+          <div class="rdv-mode-options">
+            <label class="rdv-mode-label">
+              <input type="radio" name="rdvMode" value="cabinet" checked>
+              <div class="mode-card">
+                <i class="fas fa-building"></i>
+                <span>Au cabinet (Douala)</span>
+              </div>
+            </label>
+            <label class="rdv-mode-label">
+              <input type="radio" name="rdvMode" value="visio">
+              <div class="mode-card">
+                <i class="fas fa-video"></i>
+                <span>Visioconférence</span>
+              </div>
+            </label>
+            <label class="rdv-mode-label">
+              <input type="radio" name="rdvMode" value="phone">
+              <div class="mode-card">
+                <i class="fas fa-phone-alt"></i>
+                <span>Par Téléphone</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rdvNotes">Informations complémentaires</label>
+          <textarea id="rdvNotes" rows="3" placeholder="Précisez votre situation, votre régime fiscal ou toute question préalable..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg"><i class="fas fa-calendar-check"></i> Confirmer mon Rendez-vous</button>
+        <div id="rdvSuccess" class="form-success hidden" style="margin-top: 20px; padding: 16px; background: rgba(0, 210, 255, 0.1); border: 1px solid var(--primary-skyblue); border-radius: var(--radius-sm); text-align: center; color: var(--white);">
+          <i class="fas fa-check-circle" style="color: var(--primary-skyblue); font-size: 1.5rem; margin-bottom: 8px; display: block;"></i>
+          <strong>Rendez-vous enregistré avec succès !</strong><br>
+          <span style="font-size: 0.9rem; color: var(--gray-300);">Un expert du cabinet CEFC SARL vous contactera sous 24h pour confirmer votre créneau.</span>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Logo CEFC SARL" class="logo-img">
+          <span class="logo-mark">CEFC<span class="logo-sarl">SARL</span></span>
+        </div>
+        <p>Cabinet d'Expertise Comptable et Fiscale — Votre partenaire de confiance à Douala, Cameroun.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#pricing">Tarifs</a></li>
+          <li><a href="index.html#about">À Propos</a></li>
+          <li><a href="devis.html">Demander un Devis</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-location-dot"></i> Douala, Rue bébé Eyindi en Face lycée d'Akwa</li>
+          <li><i class="fas fa-phone"></i> <a href="https://wa.link/ett9di" target="_blank">Contact WhatsApp</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:cefcsarl@gmail.com">cefcsarl@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 CEFC SARL — Cabinet d'Expertise Comptable et Fiscale. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
