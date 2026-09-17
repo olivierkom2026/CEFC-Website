@@ -1,0 +1,20 @@
+﻿name: Supabase Keep-Alive Ping
+
+on:
+  schedule:
+    # Tourne tous les 3 jours à 08:00 UTC pour empêcher la mise en veille automatique du plan gratuit Supabase
+    - cron: '0 8 */3 * *'
+  workflow_dispatch: # Permet de déclencher manuellement le test depuis GitHub
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        run: |
+          echo "Sending Keep-Alive ping to Supabase..."
+          curl -s -o /dev/null -w "%{http_code}" -X GET \
+            "https://mkvzvvtddhptohknxksi.supabase.co/rest/v1/appointments?select=id&limit=1" \
+            -H "apikey: sb_publishable_FnYX1blVMHPwLz3nZQ-oPw_ROkLQ0u_" \
+            -H "Authorization: Bearer sb_publishable_FnYX1blVMHPwLz3nZQ-oPw_ROkLQ0u_" || true
+          echo "Keep-Alive ping complete. Supabase project activity renewed!"

@@ -161,6 +161,62 @@ async function sendNotificationEmail(subject, htmlContent) {
 
 /**
  * -------------------------------------------------------------
+ * SYNCHRONISATION SUPABASE CLOUD (BASE POSTGRESQL DISTANTE)
+ * -------------------------------------------------------------
+ * Permet la synchronisation en temps réel des leads sur le cloud Supabase
+ * avec Row Level Security (RLS) et politique zero-trust.
+ */
+async function syncToSupabase(table, data) {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey || supabaseUrl.includes('votre-projet')) {
+    return;
+  }
+
+  try {
+    const endpoint = `${supabaseUrl}/rest/v1/${table}`;
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'apikey': supabaseKey,
+        'Authorization': `Bearer ${supabaseKey}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      console.warn(`⚠️ Synchronisation Supabase [${table}] (${response.status}) :`, errText);
+    } else {
+      console.log(`☁️ Synchronisé avec succès sur Supabase Cloud [${table}]`);
+    }
+  } catch (err) {
+    console.warn(`⚠️ Erreur de connexion Supabase [${table}] :`, err.message);
+  }
+}
+
+// Ping Keep-Alive pour éviter la mise en pause du plan gratuit Supabase (toutes les 48h)
+if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && !process.env.SUPABASE_URL.includes('votre-projet')) {
+  setInterval(async () => {
+    try {
+      await fetch(`${process.env.SUPABASE_URL}/rest/v1/appointments?select=id&limit=1`, {
+        headers: {
+          'apikey': process.env.SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${process.env.SUPABASE_ANON_KEY}`
+        }
+      });
+      console.log('🔄 Ping automatique Keep-Alive Supabase envoyé (maintien du projet actif).');
+    } catch (e) {
+      // Ignorer silencieusement
+    }
+  }, 48 * 60 * 60 * 1000);
+}
+
+/**
+ * -------------------------------------------------------------
  * MIDDLEWARE DE PROTECTION DU TABLEAU DE BORD (AUTHENTIFICATION JWT)
  * -------------------------------------------------------------
  */
@@ -266,6 +322,19 @@ app.post('/api/rdv', emailFormLimiter, (req, res) => {
     `;
     sendNotificationEmail(emailSubject, emailBody);
 
+    // Synchronisation Cloud Supabase (async)
+    syncToSupabase('appointments', {
+      name: safeName,
+      phone: safePhone,
+      email: safeEmail || 'Non renseigné',
+      company: safeCompany || 'Non renseignée',
+      service: safeService,
+      date: safeDate,
+      time: safeTime,
+      mode: safeMode,
+      notes: safeNotes || 'Aucune note'
+    });
+
     res.status(201).json({ message: 'Rendez-vous enregistré avec succès.', id: this.lastID });
   });
 });
@@ -317,6 +386,16 @@ app.post('/api/devis', emailFormLimiter, (req, res) => {
       </div>
     `;
     sendNotificationEmail(emailSubject, emailBody);
+
+    // Synchronisation Cloud Supabase (async)
+    syncToSupabase('quotes', {
+      name: safeName,
+      phone: safePhone,
+      email: safeEmail || 'Non renseigné',
+      company: safeCompany || 'Non renseignée',
+      service: safeService,
+      message: safeMessage || 'Aucun message'
+    });
 
     res.status(201).json({ message: 'Demande de devis enregistrée avec succès.', id: this.lastID });
   });

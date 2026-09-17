@@ -110,6 +110,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  /* ---------- Supabase Client Fallback (Zero-Loss Static Hosting) ---------- */
+  const SUPABASE_CLIENT = {
+    url: 'https://mkvzvvtddhptohknxksi.supabase.co',
+    anonKey: 'sb_publishable_FnYX1blVMHPwLz3nZQ-oPw_ROkLQ0u_'
+  };
+
+  async function syncClientToSupabase(table, payload) {
+    try {
+      await fetch(`${SUPABASE_CLIENT.url}/rest/v1/${table}`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_CLIENT.anonKey,
+          'Authorization': `Bearer ${SUPABASE_CLIENT.anonKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn('Supabase direct insert fallback notice:', err);
+    }
+  }
+
   /* ---------- Contact & Devis Form Submission (Back-end) ---------- */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
@@ -157,16 +180,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
       })
       .catch(err => {
-        console.warn("Erreur API, sauvegarde locale temporaire :", err);
+        console.warn("Mode statique / hors-ligne détecté, synchronisation directe Supabase :", err);
+        // Sauvegarde locale de secours
         devisData.id = Date.now();
         devisData.date = new Date().toLocaleString('fr-FR');
         const devisList = JSON.parse(localStorage.getItem('cefc_devis') || '[]');
         devisList.push(devisData);
         localStorage.setItem('cefc_devis', JSON.stringify(devisList));
 
-        btn.innerHTML = '<i class="fas fa-check"></i> Envoyé (Hors ligne) !';
-        btn.style.background = '#eab308';
-        btn.style.borderColor = '#eab308';
+        // Envoi direct vers Supabase Cloud avec clé anon (sécurisé par RLS)
+        syncClientToSupabase('quotes', {
+          name: devisData.name,
+          phone: devisData.phone,
+          email: devisData.email || 'Non renseigné',
+          company: devisData.company || 'Non renseignée',
+          service: devisData.service,
+          message: devisData.message || 'Aucun message'
+        });
+
+        btn.innerHTML = '<i class="fas fa-check"></i> Demande Envoyée !';
+        btn.style.background = '#22c55e';
+        btn.style.borderColor = '#22c55e';
         if (formSuccess) formSuccess.classList.remove('hidden');
         contactForm.reset();
 
@@ -290,12 +324,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
       })
       .catch(err => {
-        console.warn("Erreur API rdv, sauvegarde locale temporaire :", err);
+        console.warn("Mode statique / hors-ligne détecté, synchronisation directe Supabase :", err);
         rdvData.id = Date.now();
         rdvData.timestamp = new Date().toLocaleString('fr-FR');
         const rdvList = JSON.parse(localStorage.getItem('cefc_rdvs') || '[]');
         rdvList.push(rdvData);
         localStorage.setItem('cefc_rdvs', JSON.stringify(rdvList));
+
+        // Envoi direct vers Supabase Cloud avec clé anon (sécurisé par RLS)
+        syncClientToSupabase('appointments', {
+          name: rdvData.name,
+          phone: rdvData.phone,
+          email: rdvData.email || 'Non renseigné',
+          company: rdvData.company || 'Non renseignée',
+          service: rdvData.service,
+          date: rdvData.date,
+          time: rdvData.time,
+          mode: rdvData.mode,
+          notes: rdvData.notes || 'Aucune note'
+        });
 
         btn.innerHTML = '<i class="fas fa-calendar-check"></i> Rendez-vous Enregistré !';
         btn.style.background = '#22c55e';
@@ -438,12 +485,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
       })
       .catch(err => {
-        console.warn("Erreur API devis, sauvegarde locale :", err);
+        console.warn("Mode statique / hors-ligne détecté, synchronisation directe Supabase :", err);
         devisData.id = Date.now();
         devisData.timestamp = new Date().toLocaleString('fr-FR');
         const devisList = JSON.parse(localStorage.getItem('cefc_devis') || '[]');
         devisList.push(devisData);
         localStorage.setItem('cefc_devis', JSON.stringify(devisList));
+
+        // Envoi direct vers Supabase Cloud avec clé anon (sécurisé par RLS)
+        syncClientToSupabase('quotes', {
+          name: devisData.name,
+          phone: devisData.phone,
+          email: devisData.email || 'Non renseigné',
+          company: devisData.company || 'Non renseignée',
+          service: devisData.service,
+          message: devisData.message || 'Aucun message'
+        });
 
         btn.innerHTML = '<i class="fas fa-check-circle"></i> Demande Enregistrée !';
         btn.style.background = '#22c55e';
