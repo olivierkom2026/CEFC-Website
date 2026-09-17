@@ -3,88 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demande de Devis Gratuit | CEFC SARL — Cabinet Comptable Douala</title>
-  <meta name="description" content="Demandez un devis comptable ou fiscal sur-mesure pour votre entreprise auprès des experts de CEFC SARL à Douala.">
+  <title>Demander un Devis Gratuit | CEFC SARL — Cabinet Comptable &amp; Fiscal Douala</title>
+  <meta name="description" content="Obtenez une proposition tarifaire détaillée et sur-mesure pour votre entreprise au Cameroun (IGS, Réel, Audit, DSF).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-wrapper {
+    /* ========== PAGE DEVIS ÉLÉGANTE & CHARISMATIQUE ========== */
+    body.devis-page {
+      background: #07090e;
+      color: var(--white);
+      position: relative;
+      overflow-x: hidden;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: var(--primary-bg);
-      color: var(--white);
     }
-    .form-page-section {
+
+    /* Halos d'ambiance lumineux animés */
+    .glow-orb-devis-1 {
+      position: fixed;
+      top: 5%;
+      right: -10%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, rgba(7, 9, 14, 0) 70%);
+      filter: blur(85px);
+      z-index: 0;
+      pointer-events: none;
+      animation: floatGlowDevis 16s ease-in-out infinite alternate;
+    }
+
+    .glow-orb-devis-2 {
+      position: fixed;
+      bottom: 10%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(22, 32, 53, 0.6) 0%, rgba(0, 102, 255, 0.09) 40%, rgba(7, 9, 14, 0) 70%);
+      filter: blur(95px);
+      z-index: 0;
+      pointer-events: none;
+      animation: floatGlowDevis 20s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatGlowDevis {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-35px, 40px) scale(1.08); }
+      100% { transform: translate(25px, -30px) scale(0.95); }
+    }
+
+    .bg-watermark {
+      position: fixed;
+      inset: 0;
+      background-image: url('hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+      filter: grayscale(80%) contrast(120%);
+    }
+
+    /* Structure */
+    .devis-main {
+      position: relative;
+      z-index: 2;
       flex: 1;
-      padding: 130px 20px 80px;
-      max-width: 800px;
+      padding: 130px 24px 80px;
+      max-width: 1220px;
       margin: 0 auto;
       width: 100%;
     }
-    .form-card {
-      background: rgba(13, 17, 27, 0.85);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+
+    .breadcrumb-nav {
+      margin-bottom: 28px;
+    }
+
+    .breadcrumb-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 8px 16px;
+      border-radius: 50px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
     }
-    .page-head {
-      text-align: center;
-      margin-bottom: 32px;
+
+    .breadcrumb-link:hover {
+      color: var(--primary-skyblue);
+      border-color: rgba(0, 210, 255, 0.3);
+      transform: translateX(-3px);
     }
-    .page-head .tag {
-      margin-bottom: 12px;
+
+    .devis-grid-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 1.25fr;
+      gap: 48px;
+      align-items: start;
     }
-    .page-head h1 {
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      color: var(--white);
-      margin-bottom: 12px;
+
+    /* Colonne Gauche : Argumentaire & Offres */
+    .devis-side-info {
+      padding-top: 10px;
     }
-    .page-head p {
-      color: var(--gray-400);
-      font-size: 0.95rem;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-    .back-home {
+
+    .badge-status {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--gray-400);
-      font-size: 0.85rem;
-      margin-bottom: 24px;
-      transition: var(--transition);
-    }
-    .back-home:hover {
+      background: rgba(0, 210, 255, 0.08);
+      border: 1px solid rgba(0, 210, 255, 0.25);
       color: var(--primary-skyblue);
-      transform: translateX(-4px);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-family: var(--font-data);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
     }
-    .plan-badge {
-      display: inline-block;
-      padding: 4px 12px;
+
+    .side-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.8vw, 2.7rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .side-title em {
+      font-family: var(--font-dramatic);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--primary-skyblue);
+    }
+
+    .side-lead {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* Boîtes de synthèse d'offres */
+    .plan-summary-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .plan-item-box {
+      background: rgba(13, 17, 27, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .plan-item-box:hover {
+      border-color: rgba(0, 210, 255, 0.3);
+      background: rgba(13, 17, 27, 0.75);
+      transform: translateX(4px);
+    }
+
+    .plan-item-box.active {
+      border-color: var(--primary-skyblue);
+      background: rgba(0, 210, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+    }
+
+    .plan-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .plan-item-top h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .plan-item-tag {
+      font-size: 0.72rem;
+      padding: 3px 10px;
       border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--primary-skyblue);
+      font-family: var(--font-data);
+    }
+
+    .plan-item-box p {
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.45;
+    }
+
+    /* Garanties d'intervention */
+    .guarantee-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .guarantee-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .guarantee-card i {
+      font-size: 1.2rem;
+      color: var(--primary-skyblue);
+      flex-shrink: 0;
+    }
+
+    .guarantee-card span {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    /* Colonne Droite : Formulaire */
+    .devis-form-card {
+      background: rgba(13, 17, 27, 0.88);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: 44px 40px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 210, 255, 0.05);
+      position: relative;
+    }
+
+    .devis-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-skyblue), transparent);
+    }
+
+    .card-header-box {
+      margin-bottom: 24px;
+    }
+
+    .card-header-box h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .card-header-box p {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .active-plan-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 210, 255, 0.15);
+      border: 1px solid var(--primary-skyblue);
+      color: var(--white);
       font-size: 0.8rem;
       font-weight: 700;
-      background: rgba(0, 210, 255, 0.15);
-      color: var(--primary-skyblue);
-      margin-top: 8px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-top: 10px;
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
     }
-    @media (max-width: 768px) {
-      .form-page-section { padding: 100px 14px 50px; }
-      .form-card { padding: 24px 18px; border-radius: 20px; }
+
+    /* Champs de saisie */
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .field-single {
+      margin-bottom: 18px;
+    }
+
+    .custom-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-300);
+      margin-bottom: 8px;
+    }
+
+    .custom-label span {
+      color: var(--primary-skyblue);
+    }
+
+    .custom-input,
+    .custom-select,
+    .custom-textarea {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .custom-input:focus,
+    .custom-select:focus,
+    .custom-textarea:focus {
+      border-color: var(--primary-skyblue);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);
+      background: rgba(7, 9, 14, 0.95);
+    }
+
+    .custom-select option {
+      background: #0d111b;
+      color: #fff;
+    }
+
+    .submit-btn-glow {
+      width: 100%;
+      background: linear-gradient(135deg, #0066ff, #00d2ff);
+      color: #07090e;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 16px 28px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.35);
+      margin-top: 10px;
+    }
+
+    .submit-btn-glow:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 15px 45px rgba(0, 210, 255, 0.5);
+      background: linear-gradient(135deg, #ffffff, #00d2ff);
+    }
+
+    .trust-footer-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      text-align: center;
+    }
+
+    .trust-footer-note i {
+      color: #22c55e;
+    }
+
+    @media (max-width: 992px) {
+      .devis-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .devis-main {
+        padding-top: 110px;
+      }
+      .devis-form-card {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .field-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .guarantee-badges {
+        grid-template-columns: 1fr;
+      }
+      .devis-form-card {
+        padding: 24px 18px;
+      }
     }
   </style>
 </head>
-<body class="page-wrapper">
+<body class="devis-page">
 
-  <!-- Overlay Global Bruit SVG -->
+  <!-- Halos d'ambiance lumineux animés -->
+  <div class="glow-orb-devis-1"></div>
+  <div class="glow-orb-devis-2"></div>
+  <div class="bg-watermark"></div>
+
+  <!-- Overlay bruit cinématique -->
   <svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
     <filter id="noiseFilter">
       <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
@@ -93,7 +434,7 @@
     <rect width="100%" height="100%" filter="url(#noiseFilter)" />
   </svg>
 
-  <!-- Navigation -->
+  <!-- Navigation Flottante -->
   <header class="navbar-wrapper">
     <nav id="navbar" class="floating-island">
       <div class="nav-container">
@@ -116,68 +457,154 @@
     </nav>
   </header>
 
-  <main class="form-page-section">
-    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+  <!-- Contenu Principal -->
+  <main class="devis-main">
+    <div class="breadcrumb-nav anim-fade-up">
+      <a href="index.html" class="breadcrumb-link"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+    </div>
 
-    <div class="form-card">
-      <div class="page-head">
-        <span class="tag"><i class="fas fa-file-invoice"></i> Tarification &amp; Devis</span>
-        <h1 id="devisPageTitle">Demander un Devis Sur-Mesure</h1>
-        <p id="devisPageSub">Précisez vos besoins comptables ou fiscaux. Nos spécialistes étudient votre dossier et vous répondent sous 24h ouvrées.</p>
-        <div id="planBadgeContainer" class="hidden"><span class="plan-badge" id="planBadgeText">Offre sélectionnée</span></div>
+    <div class="devis-grid-layout">
+      <!-- Colonne Gauche : Formules & Réassurance -->
+      <div class="devis-side-info anim-fade-up">
+        <div class="badge-status">
+          <i class="fas fa-file-invoice-dollar"></i> Devis 100% Gratuit &amp; Sans Engagement
+        </div>
+
+        <h1 class="side-title">
+          Exigez la <em>Rigueur</em> d'une Tarification sur-mesure.
+        </h1>
+
+        <p class="side-lead">
+          Chaque entreprise a des obligations fiscales et un volume d'écritures uniques. Remplissez ce formulaire pour recevoir sous 24h une proposition financière précise, transparente et conforme au référentiel SYSCOHADA.
+        </p>
+
+        <!-- Piliers tarifaires interactifs -->
+        <div class="plan-summary-cards">
+          <div class="plan-item-box" id="cardPlanIgs">
+            <div class="plan-item-top">
+              <h4>Entreprise de l'IGS</h4>
+              <span class="plan-item-tag">Sur Devis</span>
+            </div>
+            <p>Idéal pour les PE du régime de l'IGS. Télédéclarations fiscales mensuelles courantes, établissement de la DSF simplifiée et tenue comptable sans engagement.</p>
+          </div>
+
+          <div class="plan-item-box" id="cardPlanReel">
+            <div class="plan-item-top">
+              <h4>Entreprise du Réel</h4>
+              <span class="plan-item-tag">Sur Devis</span>
+            </div>
+            <p>Idéal pour les PME &amp; structures du régime du Réel. Tenue comptable complète, apurement des comptes, montage de la DSF et audits de régularité fiscale.</p>
+          </div>
+
+          <div class="plan-item-box" id="cardPlanPerformance">
+            <div class="plan-item-top">
+              <h4>Pack Performance</h4>
+              <span class="plan-item-tag">Sur Contrat</span>
+            </div>
+            <p>Accompagnement 360° incluant assistance continue lors des contrôles fiscaux, conseils de gestion et pilotage financier de vos bilans.</p>
+          </div>
+        </div>
+
+        <!-- Badges de garantie -->
+        <div class="guarantee-badges">
+          <div class="guarantee-card">
+            <i class="fas fa-calculator"></i>
+            <span>Tarification transparente sans frais cachés</span>
+          </div>
+          <div class="guarantee-card">
+            <i class="fas fa-clock"></i>
+            <span>Chiffrage détaillé envoyé sous 24h</span>
+          </div>
+          <div class="guarantee-card">
+            <i class="fas fa-stamp"></i>
+            <span>Cabinet certifié &amp; agréé CEMAC</span>
+          </div>
+          <div class="guarantee-card">
+            <i class="fas fa-handshake"></i>
+            <span>Confidentialité financière absolue</span>
+          </div>
+        </div>
       </div>
 
-      <form id="devisForm" class="rdv-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="devisName">Nom complet *</label>
-            <input type="text" id="devisName" required placeholder="Ex: Paul Mbarga">
-          </div>
-          <div class="form-group">
-            <label for="devisPhone">Téléphone *</label>
-            <input type="tel" id="devisPhone" required placeholder="+237 6XX XXX XXX">
+      <!-- Colonne Droite : Formulaire Devis -->
+      <div class="devis-form-card anim-fade-up">
+        <div class="card-header-box">
+          <h2 id="devisPageTitle">Votre Demande de Devis</h2>
+          <p id="devisPageSub">Précisez vos besoins pour obtenir une tarification adaptée à la taille et au régime fiscal de votre entreprise.</p>
+          <div id="planBadgeContainer" class="hidden">
+            <span class="active-plan-pill"><i class="fas fa-check"></i> <span id="planBadgeText">Offre sélectionnée</span></span>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="devisEmail">Email *</label>
-            <input type="email" id="devisEmail" required placeholder="contact@votre-entreprise.com">
+
+        <form id="devisForm" class="devis-form-styled">
+          <!-- Identité -->
+          <div class="field-row">
+            <div>
+              <label class="custom-label" for="devisName">Nom et Prénom <span>*</span></label>
+              <input type="text" id="devisName" class="custom-input" required placeholder="Ex: Paul Mbarga">
+            </div>
+            <div>
+              <label class="custom-label" for="devisPhone">Téléphone / WhatsApp <span>*</span></label>
+              <input type="tel" id="devisPhone" class="custom-input" required placeholder="+237 6XX XXX XXX">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="devisCompany">Nom de l'entreprise *</label>
-            <input type="text" id="devisCompany" required placeholder="Ex: Douala Logistics SARL">
+
+          <div class="field-row">
+            <div>
+              <label class="custom-label" for="devisEmail">Email professionnel <span>*</span></label>
+              <input type="email" id="devisEmail" class="custom-input" required placeholder="contact@entreprise.com">
+            </div>
+            <div>
+              <label class="custom-label" for="devisCompany">Nom de l'Entreprise <span>*</span></label>
+              <input type="text" id="devisCompany" class="custom-input" required placeholder="Ex: Douala Logistics SARL">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="devisService">Prestation ou Formule souhaitée *</label>
-          <select id="devisService" required>
-            <option value="" disabled selected>Choisissez une prestation</option>
-            <option value="Offre Entreprise de l'IGS">Offre Entreprise de l'IGS (Impôt Général Synthétique)</option>
-            <option value="Offre Entreprise du Réel">Offre Entreprise du Réel (Tenue comptable SYSCOHADA &amp; DSF)</option>
-            <option value="Offre Performance - Accompagnement global">Offre Performance — Accompagnement global Sur Contrat</option>
-            <option value="Tenue de Comptabilité courante">Tenue de Comptabilité courante</option>
-            <option value="Télédéclarations fiscales courantes">Télédéclarations fiscales courantes</option>
-            <option value="Établissement / Montage de la DSF">Établissement / Montage de la DSF</option>
-            <option value="Restructuration et apurement des comptes">Restructuration et apurement des comptes</option>
-            <option value="Assistance en cas de contrôle fiscal">Assistance en cas de contrôle fiscal</option>
-            <option value="Audits comptables et financiers">Audits comptables et financiers</option>
-            <option value="Autre demande">Autre prestation</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="devisMsg">Description de votre activité ou de vos besoins spécifiques</label>
-          <textarea id="devisMsg" rows="4" placeholder="Décrivez votre activité, le volume moyen de factures, votre centre des impôts de rattachement..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-blue btn-full btn-lg"><i class="fas fa-paper-plane"></i> Envoyer ma Demande de Devis</button>
-        <div id="devisSuccess" class="form-success hidden" style="margin-top: 20px; padding: 16px; background: rgba(0, 210, 255, 0.1); border: 1px solid var(--primary-skyblue); border-radius: var(--radius-sm); text-align: center; color: var(--white);">
-          <i class="fas fa-check-circle" style="color: var(--primary-skyblue); font-size: 1.5rem; margin-bottom: 8px; display: block;"></i>
-          <strong>Votre demande a été envoyée avec succès !</strong><br>
-          <span style="font-size: 0.9rem; color: var(--gray-300);">Un expert du cabinet CEFC SARL prépare votre proposition chiffrée et vous recontactera sous 24h.</span>
-        </div>
-      </form>
+
+          <!-- Prestation -->
+          <div class="field-single">
+            <label class="custom-label" for="devisService">Formule ou Prestation souhaitée <span>*</span></label>
+            <select id="devisService" class="custom-select" required>
+              <option value="" disabled selected>Sélectionnez la formule d'intervention</option>
+              <option value="Offre Entreprise de l'IGS">Offre Entreprise de l'IGS (Impôt Général Synthétique)</option>
+              <option value="Offre Entreprise du Réel">Offre Entreprise du Réel (Comptabilité SYSCOHADA &amp; DSF)</option>
+              <option value="Offre Performance - Accompagnement global">Offre Performance — Accompagnement global Sur Contrat</option>
+              <option value="Tenue de Comptabilité courante">Tenue de Comptabilité courante</option>
+              <option value="Télédéclarations fiscales courantes">Télédéclarations fiscales courantes</option>
+              <option value="Établissement / Montage de la DSF">Établissement / Montage de la DSF</option>
+              <option value="Restructuration et apurement des comptes">Restructuration et apurement des comptes</option>
+              <option value="Assistance en cas de contrôle fiscal">Assistance en cas de contrôle fiscal</option>
+              <option value="Audits comptables et financiers">Audits comptables et financiers</option>
+              <option value="Autre demande">Autre prestation spécifique</option>
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="field-single">
+            <label class="custom-label" for="devisMsg">Description de votre activité &amp; Besoins particuliers</label>
+            <textarea id="devisMsg" rows="4" class="custom-textarea" placeholder="Indiquez brièvement votre secteur d'activité, votre centre des impôts de rattachement ou toute particularité comptable..."></textarea>
+          </div>
+
+          <!-- Bouton Submit -->
+          <button type="submit" class="submit-btn-glow">
+            <i class="fas fa-paper-plane"></i> Recevoir mon Devis Gratuitement
+          </button>
+
+          <div class="trust-footer-note">
+            <i class="fas fa-lock"></i> Proposition confidentielle et gratuite sans engagement sous 24h
+          </div>
+
+          <!-- Message Succès -->
+          <div id="devisSuccess" class="form-success hidden" style="margin-top: 20px; padding: 18px; background: rgba(0, 210, 255, 0.12); border: 1px solid var(--primary-skyblue); border-radius: var(--radius-md); text-align: center; color: var(--white); box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);">
+            <i class="fas fa-circle-check" style="color: var(--primary-skyblue); font-size: 1.8rem; margin-bottom: 8px; display: block;"></i>
+            <strong style="font-size: 1.05rem;">Demande de devis transmise avec succès !</strong><br>
+            <span style="font-size: 0.9rem; color: var(--gray-300);">Nos experts examinent vos informations et vous font parvenir une proposition détaillée sous 24h.</span>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer id="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
